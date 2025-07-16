@@ -1,7 +1,12 @@
 {
-  "semi": false,
-  "singleQuote": true,
-  "trailingComma": "es5",
-  "printWidth": 100,
-  "tabWidth": 2
+    "singleQuote": true,
+    "semi": false,
+    "bracketSameLine": false,
+    "printWidth": 140,
+    "singleAttributePerLine": true,
+    "tailwindConfig": "./tailwind.config.mjs",
+    "tailwindPreserveDuplicates": false,
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "plugins": ["prettier-plugin-tailwindcss"]
 }

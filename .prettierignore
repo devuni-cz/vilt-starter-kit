@@ -1,4 +1,4 @@
-node_modules
-dist
-public
-vendor
+# Ignore artifacts:
+public/build
+public/storage
+storage/

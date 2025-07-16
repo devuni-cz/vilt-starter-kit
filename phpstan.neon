@@ -1,8 +1,12 @@
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+    - vendor/larastan/larastan/extension.neon
 
 parameters:
-    level: max
     paths:
-        - app
-        - database
+        - app/
+        - bootstrap/
+        - database/
+        - public/
+        - routes/
+
+    level: max
