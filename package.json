@@ -5,6 +5,12 @@
     "scripts": {
         "build": "vite build && vite build --ssr",
         "dev": "vite",
+        "lint": "eslint --ext .js,.vue resources/js",
+        "format": "prettier --write .",
+        "rector": "php vendor/bin/rector process",
+        "test": "php ./vendor/bin/pest",
+        "analyse": "php vendor/bin/phpstan analyse",
+        "pint": "php vendor/bin/pint",
         "prepare": "husky install"
     },
     "devDependencies": {
