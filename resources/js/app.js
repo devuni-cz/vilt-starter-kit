@@ -1,5 +1,5 @@
 import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import { createInertiaApp, Head, Link } from '@inertiajs/inertia-vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue  } from 'ziggy-js';
 import { Ziggy } from './ziggy';
@@ -10,7 +10,9 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     const app = createApp({ render: () => h(App, props) });
     app.use(plugin)
-      .use(ZiggyVue, Ziggy);
+      .use(ZiggyVue, Ziggy)
+      .component('Head', Head)
+      .component('Link', Link)
 
     Sentry.init({
         app,
