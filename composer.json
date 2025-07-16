@@ -11,6 +11,7 @@
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "sentry/sentry-laravel": "^4.15",
+        "spatie/laravel-sitemap": "^7.3",
         "tightenco/ziggy": "^2.5"
     },
     "require-dev": {
