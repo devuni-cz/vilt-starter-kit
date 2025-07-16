@@ -8,9 +8,8 @@
         "lint": "eslint --ext .js,.vue resources/js",
         "format": "prettier --write .",
         "rector": "php vendor/bin/rector process",
-        "test": "php ./vendor/bin/pest",
         "analyse": "php vendor/bin/phpstan analyse",
-        "pint": "php vendor/bin/pint",
+        "pint": "php vendor/bin/pint . --config=/pint.json",
         "prepare": "husky install"
     },
     "devDependencies": {
@@ -27,6 +26,7 @@
         "laravel-vite-plugin": "^1.2.0",
         "lint-staged": "^16.1.2",
         "prettier": "^3.6.2",
+        "prettier-plugin-tailwindcss": "^0.6.14",
         "tailwindcss": "^4.1.11",
         "vite": "^6.2.4"
     },
@@ -49,12 +49,12 @@
         "lightningcss-linux-x64-gnu": "^1.29.1"
     },
     "lint-staged": {
-        "resources/js/**/*.{js,vue}": [
+        "**/*.{js,vue,css,scss,html,json,md}": [
             "eslint --fix",
             "prettier --write"
         ],
-        "**/*.{js,vue,css,scss,html,json,md}": [
-            "prettier --write"
+        "**/*.php": [
+            "pint"
         ]
     }
 }
