@@ -43,6 +43,11 @@
         "vue": "^3.5.17",
         "ziggy-js": "^2.5.3"
     },
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "4.9.5",
+        "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
+        "lightningcss-linux-x64-gnu": "^1.29.1"
+    },
     "lint-staged": {
         "resources/js/**/*.{js,vue}": [
             "eslint --fix",
