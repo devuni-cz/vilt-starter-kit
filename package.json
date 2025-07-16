@@ -4,24 +4,46 @@
     "type": "module",
     "scripts": {
         "build": "vite build && vite build --ssr",
-        "dev": "vite"
+        "dev": "vite",
+        "prepare": "husky install"
     },
     "devDependencies": {
+        "@eslint/js": "^9.31.0",
         "@tailwindcss/vite": "^4.1.11",
         "@vitejs/plugin-vue": "^6.0.0",
         "axios": "^1.8.2",
         "concurrently": "^9.0.1",
+        "eslint": "^9.31.0",
+        "eslint-plugin-unused-imports": "^4.1.4",
+        "eslint-plugin-vue": "^10.3.0",
+        "globals": "^16.3.0",
+        "husky": "^9.1.7",
         "laravel-vite-plugin": "^1.2.0",
+        "lint-staged": "^16.1.2",
+        "prettier": "^3.6.2",
         "tailwindcss": "^4.1.11",
         "vite": "^6.2.4"
     },
     "dependencies": {
+        "@heroicons/vue": "^2.2.0",
         "@inertiajs/inertia": "^0.11.1",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/server": "^0.1.0",
         "@inertiajs/vue3": "^2.0.14",
+        "@sentry/tracing": "^7.120.3",
+        "@sentry/vite-plugin": "^3.6.0",
+        "@sentry/vue": "^9.39.0",
         "@vue/server-renderer": "^3.5.17",
         "vue": "^3.5.17",
         "ziggy-js": "^2.5.3"
+    },
+    "lint-staged": {
+        "resources/js/**/*.{js,vue}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "**/*.{js,vue,css,scss,html,json,md}": [
+            "prettier --write"
+        ]
     }
 }
