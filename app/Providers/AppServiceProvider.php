@@ -2,12 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Carbon\CarbonImmutable;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Date;
-use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Vite;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,13 +28,14 @@ class AppServiceProvider extends ServiceProvider
         Date::useClass(CarbonImmutable::class);
         JsonResource::withoutWrapping();
         Vite::prefetch(concurrency: 3);
+
         if (app()->isLocal()) {
             Model::preventLazyLoading();
             Model::shouldBeStrict();
         }
         if (app()->isProduction()) {
             $this->app['request']->server->set('HTTPS', true);
-            // DB::prohibitDestructiveCommands();
+            DB::prohibitDestructiveCommands();
         }
     }
 }

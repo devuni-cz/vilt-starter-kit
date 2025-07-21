@@ -3,21 +3,22 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build && vite build --ssr",
         "dev": "vite",
-        "lint": "eslint --ext .js,.vue resources/js",
-        "format": "prettier --write .",
+        "build": "vite build",
+        "build:ssr": "vite build --ssr",
+        "prettier": "prettier --write .",
+        "pint": "php vendor/bin/pint . --config=/pint.json",
         "rector": "php vendor/bin/rector process",
         "analyse": "php vendor/bin/phpstan analyse",
-        "pint": "php vendor/bin/pint . --config=/pint.json",
-        "prepare": "husky install"
+        "lint": "eslint --ext .js,.vue resources/js",
+        "format": "npm run prettier && npm run pint && npm run lint"
     },
     "devDependencies": {
         "@eslint/js": "^9.31.0",
         "@tailwindcss/vite": "^4.1.11",
         "@vitejs/plugin-vue": "^6.0.0",
-        "axios": "^1.8.2",
-        "concurrently": "^9.0.1",
+        "axios": "^1.10",
+        "concurrently": "^9.2",
         "eslint": "^9.31.0",
         "eslint-plugin-unused-imports": "^4.1.4",
         "eslint-plugin-vue": "^10.3.0",
@@ -28,13 +29,10 @@
         "prettier": "^3.6.2",
         "prettier-plugin-tailwindcss": "^0.6.14",
         "tailwindcss": "^4.1.11",
-        "vite": "^7.0.4"
+        "vite": "^7.0.5"
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "@inertiajs/inertia": "^0.11.1",
-        "@inertiajs/inertia-vue3": "^0.6.0",
-        "@inertiajs/server": "^0.1.0",
         "@inertiajs/vue3": "^2.0.14",
         "@sentry/tracing": "^7.120.3",
         "@sentry/vite-plugin": "^3.6.0",
@@ -44,9 +42,9 @@
         "ziggy-js": "^2.5.3"
     },
     "optionalDependencies": {
-        "@rollup/rollup-linux-x64-gnu": "4.9.5",
-        "@tailwindcss/oxide-linux-x64-gnu": "^4.0.1",
-        "lightningcss-linux-x64-gnu": "^1.29.1"
+        "@rollup/rollup-linux-x64-gnu": "4.45",
+        "@tailwindcss/oxide-linux-x64-gnu": "^4.1",
+        "lightningcss-linux-x64-gnu": "^1.30"
     },
     "lint-staged": {
         "**/*.{js,vue,css,scss,html,json,md}": [

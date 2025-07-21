@@ -6,22 +6,22 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "inertiajs/inertia-laravel": "^2.0",
-        "laravel/framework": "^12.0",
+        "laravel/framework": "^12.20",
         "laravel/tinker": "^2.10.1",
         "sentry/sentry-laravel": "^4.15",
         "spatie/laravel-sitemap": "^7.3",
         "tightenco/ziggy": "^2.5"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.23",
-        "larastan/larastan": "^3.5",
+        "fakerphp/faker": "^1.24",
+        "larastan/larastan": "^3.6",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.24",
-        "laravel/sail": "^1.41",
+        "laravel/sail": "^1.43",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.6",
+        "nunomaduro/collision": "^8.8",
         "pestphp/pest": "^3.8",
         "rector/rector": "^2.1"
     },
