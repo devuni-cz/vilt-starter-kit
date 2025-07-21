@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "devuni/template",
+    "name": "devuni/livt-template",
     "type": "project",
     "description": "Starting template with the most modern Laravel features.",
     "keywords": [
