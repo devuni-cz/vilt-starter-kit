@@ -5,6 +5,9 @@ import Footer from '@/layouts/partials/Footer.vue'
 
 <template>
     <Navbar />
-    <slot name="content" />
+
+    <main>
+        <slot name="content" />
+    </main>
     <Footer />
 </template>

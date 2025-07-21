@@ -1,11 +1,13 @@
 <script setup>
-import AppLayout from '@/layouts/AppLayout.vue';
+import AppLayout from '@/layouts/AppLayout.vue'
 </script>
 
 <template>
     <AppLayout>
         <template #content>
-            <h1>Welcome to our application!</h1>
+            <section>
+                <header>Welcome to our application!</header>
+            </section>
         </template>
     </AppLayout>
 </template>

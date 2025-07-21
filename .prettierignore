@@ -2,3 +2,9 @@
 public/build
 public/storage
 storage/
+vendor/
+node_modules/
+bootstrap/cache/
+storage/
+*.min.js
+*.min.css

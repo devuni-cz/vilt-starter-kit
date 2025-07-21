@@ -2,11 +2,31 @@
     "singleQuote": true,
     "semi": false,
     "bracketSameLine": false,
-    "printWidth": 140,
+    "printWidth": 120,
     "singleAttributePerLine": true,
-    "tailwindConfig": "./tailwind.config.mjs",
     "tailwindPreserveDuplicates": false,
     "trailingComma": "es5",
     "tabWidth": 4,
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "useTabs": false,
+    "endOfLine": "lf",
+    "vueIndentScriptAndStyle": false,
+    "htmlWhitespaceSensitivity": "css",
+    "plugins": ["prettier-plugin-tailwindcss"],
+    "overrides": [
+        {
+            "files": ["*.php"],
+            "options": {
+                "tabWidth": 4,
+                "singleQuote": false
+            }
+        },
+        {
+            "files": ["*.blade.php"],
+            "options": {
+                "tabWidth": 4,
+                "singleQuote": false,
+                "parser": "html"
+            }
+        }
+    ]
 }

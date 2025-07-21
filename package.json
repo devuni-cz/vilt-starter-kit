@@ -6,12 +6,14 @@
         "dev": "vite",
         "build": "vite build",
         "build:ssr": "vite build --ssr",
-        "prettier": "prettier --write .",
-        "pint": "php vendor/bin/pint . --config=/pint.json",
+        "prettier": "prettier --write \"resources/**/*.{js,vue,css}\" \"*.{js,json}\"",
+        "pint": "php vendor/bin/pint . --config=pint.json",
         "rector": "php vendor/bin/rector process",
         "analyse": "php vendor/bin/phpstan analyse",
-        "lint": "eslint --ext .js,.vue resources/js",
-        "format": "npm run prettier && npm run pint && npm run lint"
+        "lint": "eslint resources/js --fix",
+        "lint:check": "eslint resources/js",
+        "format": "npm run prettier && npm run pint && npm run lint",
+        "prepare": "husky"
     },
     "devDependencies": {
         "@eslint/js": "^9.31.0",
@@ -47,8 +49,11 @@
         "lightningcss-linux-x64-gnu": "^1.30"
     },
     "lint-staged": {
-        "**/*.{js,vue,css,scss,html,json,md}": [
+        "resources/js/**/*.{js,vue}": [
             "eslint --fix",
+            "prettier --write"
+        ],
+        "**/*.{css,scss,html,json,md}": [
             "prettier --write"
         ],
         "**/*.php": [
