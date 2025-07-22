@@ -207,14 +207,17 @@ SENTRY_LARAVEL_DSN=your-sentry-dsn
 The `AppServiceProvider` includes several production-ready optimizations:
 
 **Development Environment (`local`):**
+
 - `Model::preventLazyLoading()` - Prevents N+1 query issues
 - `Model::shouldBeStrict()` - Enables strict mode for better debugging
 
 **Production Environment (`production`):**
+
 - `$this->app['request']->server->set('HTTPS', true)` - Forces HTTPS
 - `DB::prohibitDestructiveCommands()` - Prevents accidental data loss
 
 **Global Optimizations:**
+
 - `Date::useClass(CarbonImmutable::class)` - Immutable date objects
 - `JsonResource::withoutWrapping()` - Clean API responses
 - `Vite::prefetch(concurrency: 3)` - Asset prefetching for performance
@@ -244,6 +247,7 @@ user=www-data
 ```
 
 Then run:
+
 ```bash
 sudo supervisorctl reread
 sudo supervisorctl update
