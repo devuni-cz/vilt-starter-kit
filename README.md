@@ -202,6 +202,78 @@ SENTRY_LARAVEL_DSN=your-sentry-dsn
 </details>
 
 <details>
+<summary><strong>AppServiceProvider Configuration</strong></summary>
+
+The `AppServiceProvider` includes several production-ready optimizations:
+
+**Development Environment (`local`):**
+- `Model::preventLazyLoading()` - Prevents N+1 query issues
+- `Model::shouldBeStrict()` - Enables strict mode for better debugging
+
+**Production Environment (`production`):**
+- `$this->app['request']->server->set('HTTPS', true)` - Forces HTTPS
+- `DB::prohibitDestructiveCommands()` - Prevents accidental data loss
+
+**Global Optimizations:**
+- `Date::useClass(CarbonImmutable::class)` - Immutable date objects
+- `JsonResource::withoutWrapping()` - Clean API responses
+- `Vite::prefetch(concurrency: 3)` - Asset prefetching for performance
+
+</details>
+
+<details>
+<summary><strong>Production SSR Setup</strong></summary>
+
+For Server-Side Rendering in production, you need to run the SSR server continuously. Here are two recommended approaches:
+
+**Option 1: Supervisor (Recommended)**
+
+Create `/etc/supervisor/conf.d/inertia-ssr.conf`:
+
+```ini
+[program:inertia-ssr]
+process_name=%(program_name)s_%(process_num)02d
+command=php /var/www/html/artisan inertia:start-ssr
+autostart=true
+autorestart=true
+numprocs=1
+redirect_stderr=true
+stdout_logfile=/var/www/html/storage/logs/inertia.log
+stderr_logfile=/var/www/html/storage/logs/inertia.error.log
+user=www-data
+```
+
+Then run:
+```bash
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start inertia-ssr:*
+```
+
+**Option 2: Screen Session**
+
+```bash
+# Start screen session
+screen -S inertia-ssr
+
+# Run SSR server
+php artisan inertia:start-ssr
+
+# Detach with Ctrl+A, D
+# Reattach with: screen -r inertia-ssr
+```
+
+**Option 3: PM2 (Node.js Process Manager)**
+
+```bash
+pm2 start --name="inertia-ssr" php -- artisan inertia:start-ssr
+pm2 save
+pm2 startup
+```
+
+</details>
+
+<details>
 <summary><strong>Customization</strong></summary>
 
 - **TailwindCSS Config**: `tailwind.config.js`
