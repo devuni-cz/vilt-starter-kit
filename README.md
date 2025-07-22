@@ -1,61 +1,255 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 LIVT Starter Kit
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
 
-## About Laravel
+![LIVT Logo](https://img.shields.io/badge/LIVT-Starter%20Kit-red?style=for-the-badge&logo=laravel&logoColor=white)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**A modern, production-ready starter kit combining the power of Laravel, Inertia.js, Vue 3, and TailwindCSS**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
+[![Inertia.js](https://img.shields.io/badge/Inertia.js-2.x-9553E9?style=flat&logo=inertia&logoColor=white)](https://inertiajs.com)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=flat&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+[![Packagist](https://img.shields.io/packagist/v/devuni/livt-starter-kit?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/devuni/livt-starter-kit)
+[![Downloads](https://img.shields.io/packagist/dt/devuni/livt-starter-kit?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/devuni/livt-starter-kit)
+[![License](https://img.shields.io/badge/license-MIT-green?style=flat)](LICENSE)
 
-## Learning Laravel
+[Installation](#-installation) • [Features](#-features) • [Development](#-development) • [Documentation](#-documentation)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+</div>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🎯 What is LIVT?
 
-## Laravel Sponsors
+**LIVT** (Laravel + Inertia + Vue + TailwindCSS) is a carefully crafted starter kit that brings together the most powerful modern web development tools. Skip the tedious setup and jump straight into building amazing applications with a battle-tested foundation.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### ✨ Why Choose LIVT?
 
-### Premium Partners
+- 🏗️ **Production Ready** - Pre-configured with best practices and modern tooling
+- 🚀 **Developer Experience** - Hot reloading, TypeScript support, and modern dev tools
+- 🔒 **Enterprise Grade** - Built-in error tracking, code quality tools, and testing setup
+- 📱 **Modern UI** - TailwindCSS 4.x with responsive design patterns
+- ⚡ **Performance First** - Optimized builds, SSR support, and efficient bundling
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🚀 Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Quick Start (Recommended)
 
-## Code of Conduct
+Create a new LIVT project using Laravel's installer:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+laravel new my-awesome-app --using=devuni/livt-starter-kit
+```
 
-## Security Vulnerabilities
+### Alternative Installation
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+# Clone the repository
+git clone https://github.com/devuni-cz/livt-starter-kit.git my-project
+cd my-project
 
-## License
+# Install dependencies
+composer install
+npm install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# Run database migrations
+php artisan migrate
+
+# Start development servers
+composer dev
+```
+
+That's it! 🎉 Your development environment is ready at `http://localhost:8000`
+
+---
+
+## 🛠️ Features
+
+### 🎨 Frontend Stack
+
+| Feature         | Version | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| **Vue 3**       | `3.5.x` | Composition API with `<script setup>` syntax |
+| **Inertia.js**  | `2.x`   | SPA experience without API complexity        |
+| **TailwindCSS** | `4.x`   | Utility-first CSS framework                  |
+| **Vite**        | `7.x`   | Lightning-fast build tool and dev server     |
+| **SSR Support** | ✅      | Server-side rendering for better SEO         |
+
+### 🛡️ Backend Stack
+
+| Feature     | Version | Description                               |
+| ----------- | ------- | ----------------------------------------- |
+| **Laravel** | `12.x`  | Modern PHP framework with latest features |
+| **PHP**     | `8.4+`  | Latest PHP with performance improvements  |
+| **Ziggy**   | `2.x`   | Use Laravel routes in JavaScript          |
+| **Sentry**  | `4.x`   | Error tracking and performance monitoring |
+
+### 🧰 Development Tools
+
+<details>
+<summary><strong>Code Quality & Linting</strong></summary>
+
+- **ESLint** - JavaScript/Vue linting with auto-fix
+- **Prettier** - Code formatting for consistent style
+- **Laravel Pint** - PHP code style fixer
+- **Larastan** - Static analysis for Laravel
+- **Rector** - Automated code upgrades and refactoring
+
+</details>
+
+<details>
+<summary><strong>Testing & Quality Assurance</strong></summary>
+
+- **Pest PHP** - Modern testing framework
+- **PHPStan** - Static analysis for PHP
+- **Laravel Debugbar** - Development debugging tools
+
+</details>
+
+<details>
+<summary><strong>Developer Experience</strong></summary>
+
+- **Husky** - Git hooks for code quality
+- **Lint-staged** - Run linters on staged files
+- **Hot Module Replacement** - Instant updates during development
+- **Auto-imports** - Unused import detection and cleanup
+
+</details>
+
+---
+
+## 🚦 Development
+
+### Available Commands
+
+```bash
+# Start all development services (recommended)
+composer dev
+
+# Individual commands
+php artisan serve          # Laravel development server
+npm run dev                # Vite development server
+php artisan queue:listen   # Queue worker
+php artisan pail           # Real-time logs
+
+# Building for production
+npm run build              # Build frontend assets
+npm run build:ssr          # Build with SSR support
+
+# Code quality
+npm run format             # Format all code (Prettier + Pint + ESLint)
+npm run lint               # Run ESLint
+composer analyse           # Run PHPStan analysis
+composer rector            # Run Rector refactoring
+```
+
+### Project Structure
+
+```
+├── app/                    # Laravel application code
+├── resources/
+│   ├── js/
+│   │   ├── components/     # Vue components
+│   │   ├── layouts/        # Page layouts
+│   │   ├── pages/          # Inertia pages
+│   │   └── utils/          # JavaScript utilities
+│   ├── css/                # Stylesheets
+│   └── views/              # Blade templates
+├── routes/                 # Application routes
+├── database/               # Migrations and seeders
+└── tests/                  # Test files
+```
+
+---
+
+## 📚 Documentation
+
+### 🎓 Learning Resources
+
+- **[Laravel Documentation](https://laravel.com/docs)** - Comprehensive Laravel guide
+- **[Inertia.js Guide](https://inertiajs.com/)** - Building SPAs with server-side routing
+- **[Vue 3 Documentation](https://vuejs.org/)** - Modern Vue.js development
+
+### 🔧 Configuration
+
+<details>
+<summary><strong>Environment Setup</strong></summary>
+
+Key environment variables in `.env`:
+
+```env
+# Application
+APP_NAME="My LIVT App"
+APP_ENV=local
+APP_DEBUG=true
+
+# Database
+DB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
+
+# Sentry (Optional)
+SENTRY_LARAVEL_DSN=your-sentry-dsn
+```
+
+</details>
+
+<details>
+<summary><strong>Customization</strong></summary>
+
+- **TailwindCSS Config**: `tailwind.config.js`
+- **Vite Config**: `vite.config.js`
+- **ESLint Config**: `eslint.config.js`
+- **TypeScript**: Add `tsconfig.json` for TypeScript support
+
+</details>
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Run tests and linting (`npm run format && composer test`)
+5. Commit your changes (`git commit -m 'Add amazing feature'`)
+6. Push to the branch (`git push origin feature/amazing-feature`)
+7. Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is open-sourced software licensed under the [MIT license](LICENSE).
+
+---
+
+## 🙏 Acknowledgments
+
+- **[Laravel](https://laravel.com)** - The PHP framework for web artisans
+- **[Inertia.js](https://inertiajs.com)** - The modern monolith
+- **[Vue.js](https://vuejs.org)** - The progressive JavaScript framework
+- **[TailwindCSS](https://tailwindcss.com)** - Rapidly build modern websites
+
+---
+
+<div align="center">
+
+**Made with ❤️ by [Devuni](https://github.com/devuni-cz)**
+
+⭐ **If this project helped you, please consider giving it a star!** ⭐
+
+[🐛 Report Bug](https://github.com/devuni-cz/livt-starter-kit/issues) • [💡 Request Feature](https://github.com/devuni-cz/livt-starter-kit/issues) • [💬 Discussions](https://github.com/devuni-cz/livt-starter-kit/discussions)
+
+</div>
