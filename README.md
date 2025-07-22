@@ -177,6 +177,41 @@ composer rector            # Run Rector refactoring
 - **[Laravel Documentation](https://laravel.com/docs)** - Comprehensive Laravel guide
 - **[Inertia.js Guide](https://inertiajs.com/)** - Building SPAs with server-side routing
 - **[Vue 3 Documentation](https://vuejs.org/)** - Modern Vue.js development
+- **[TailwindCSS Docs](https://tailwindcss.com/)** - Utility-first CSS framework
+
+### 📋 Quick Reference
+
+<details>
+<summary><strong>Essential Commands Cheat Sheet</strong></summary>
+
+```bash
+# 🚀 Development
+composer dev                    # Start all services
+php artisan serve               # Laravel server only
+npm run dev                     # Frontend dev server
+
+# 🏗️ Building
+npm run build                   # Production build
+npm run build:ssr              # SSR production build
+
+# 🧹 Code Quality
+npm run format                  # Auto-fix everything
+npm run lint                    # Check frontend code
+composer analyse                # PHP static analysis
+
+# 🗄️ Database
+php artisan migrate             # Run migrations
+php artisan migrate:fresh --seed # Fresh DB with data
+php artisan tinker              # Interactive shell
+
+# 📦 Dependencies
+composer install                # PHP packages
+npm install                     # Node packages
+composer update                 # Update PHP deps
+npm update                      # Update Node deps
+```
+
+</details>
 
 ### 🔧 Configuration
 
@@ -202,21 +237,21 @@ SENTRY_LARAVEL_DSN=your-sentry-dsn
 </details>
 
 <details>
-<summary><strong>AppServiceProvider Configuration</strong></summary>
+<summary><strong>🔧 AppServiceProvider Configuration</strong></summary>
 
 The `AppServiceProvider` includes several production-ready optimizations:
 
-**Development Environment (`local`):**
+**🧪 Development Environment (`local`):**
 
 - `Model::preventLazyLoading()` - Prevents N+1 query issues
 - `Model::shouldBeStrict()` - Enables strict mode for better debugging
 
-**Production Environment (`production`):**
+**🚀 Production Environment (`production`):**
 
 - `$this->app['request']->server->set('HTTPS', true)` - Forces HTTPS
 - `DB::prohibitDestructiveCommands()` - Prevents accidental data loss
 
-**Global Optimizations:**
+**⚡ Global Optimizations:**
 
 - `Date::useClass(CarbonImmutable::class)` - Immutable date objects
 - `JsonResource::withoutWrapping()` - Clean API responses
@@ -225,11 +260,11 @@ The `AppServiceProvider` includes several production-ready optimizations:
 </details>
 
 <details>
-<summary><strong>Production SSR Setup</strong></summary>
+<summary><strong>🖥️ Production SSR Setup</strong></summary>
 
-For Server-Side Rendering in production, you need to run the SSR server continuously. Here are two recommended approaches:
+For Server-Side Rendering in production, you need to run the SSR server continuously. Here are three recommended approaches:
 
-**Option 1: Supervisor (Recommended)**
+**Option 1: Supervisor (Recommended) 🛡️**
 
 Create `/etc/supervisor/conf.d/inertia-ssr.conf`:
 
@@ -254,7 +289,7 @@ sudo supervisorctl update
 sudo supervisorctl start inertia-ssr:*
 ```
 
-**Option 2: Screen Session**
+**Option 2: Screen Session 📺**
 
 ```bash
 # Start screen session
@@ -267,7 +302,7 @@ php artisan inertia:start-ssr
 # Reattach with: screen -r inertia-ssr
 ```
 
-**Option 3: PM2 (Node.js Process Manager)**
+**Option 3: PM2 (Node.js Process Manager) ⚙️**
 
 ```bash
 pm2 start --name="inertia-ssr" php -- artisan inertia:start-ssr
@@ -278,12 +313,125 @@ pm2 startup
 </details>
 
 <details>
-<summary><strong>Customization</strong></summary>
+<summary><strong>🎨 Customization</strong></summary>
 
-- **TailwindCSS Config**: `tailwind.config.js`
 - **Vite Config**: `vite.config.js`
 - **ESLint Config**: `eslint.config.js`
-- **TypeScript**: Add `tsconfig.json` for TypeScript support
+
+</details>
+
+---
+
+## ⚡ Performance Tips
+
+<details>
+<summary><strong>🚀 Optimization Recommendations</strong></summary>
+
+### Frontend Performance
+
+```bash
+# Analyze bundle size
+npm run build -- --analyze
+
+# Enable compression in production
+# Add to your web server config (nginx/apache)
+gzip on;
+gzip_types text/css application/javascript;
+```
+
+### Laravel Performance
+
+```bash
+# Cache configuration in production
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+
+# Optimize autoloader
+composer install --optimize-autoloader --no-dev
+
+# Enable OPcache in production
+opcache.enable=1
+opcache.memory_consumption=512
+```
+
+### Database Optimization
+
+```php
+// Use indexes for frequently queried columns
+Schema::table('users', function (Blueprint $table) {
+    $table->index(['email', 'created_at']);
+});
+
+// Use eager loading to prevent N+1 queries
+User::with(['posts', 'comments'])->get();
+```
+
+</details>
+
+---
+
+## 🚨 Troubleshooting
+
+<details>
+<summary><strong>🔧 Common Issues & Solutions</strong></summary>
+
+### Installation Issues
+
+**Problem**: `composer install` fails
+
+```bash
+# Solution: Clear composer cache
+composer clear-cache
+composer install --no-cache
+```
+
+**Problem**: `npm install` fails
+
+```bash
+# Solution: Clear npm cache and node_modules
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
+
+### Development Issues
+
+**Problem**: Vite server not hot reloading
+
+```bash
+# Solution: Check if port 5173 is available
+lsof -ti:5173 | xargs kill -9
+npm run dev
+```
+
+**Problem**: Laravel debugbar not showing
+
+```bash
+# Solution: Clear config cache
+php artisan config:clear
+php artisan cache:clear
+```
+
+### Production Issues
+
+**Problem**: SSR not working in production
+
+```bash
+# Check if SSR server is running
+ps aux | grep "inertia:start-ssr"
+
+# Restart SSR server
+sudo supervisorctl restart inertia-ssr:*
+```
+
+**Problem**: Assets not loading
+
+```bash
+# Rebuild assets
+npm run build
+php artisan config:cache
+```
 
 </details>
 
@@ -293,15 +441,53 @@ pm2 startup
 
 We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-### Development Setup
+### 🏁 Development Setup
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Run tests and linting (`npm run format && composer test`)
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
+1. **Fork** the repository
+2. **Clone** your fork: `git clone https://github.com/YOUR-USERNAME/livt-starter-kit.git`
+3. **Install** dependencies: `composer install && npm install`
+4. **Setup** environment: `cp .env.example .env && php artisan key:generate`
+5. **Create** feature branch: `git checkout -b feature/amazing-feature`
+6. **Make** your changes and add tests
+7. **Test** your changes: `npm run format && composer test`
+8. **Commit** changes: `git commit -m 'feat: add amazing feature'`
+9. **Push** to branch: `git push origin feature/amazing-feature`
+10. **Open** a Pull Request
+
+### 🎯 Contribution Areas
+
+- 🐛 **Bug fixes** - Help us squash bugs
+- ✨ **New features** - Add awesome functionality
+- 📚 **Documentation** - Improve guides and examples
+- 🎨 **UI/UX** - Make it more beautiful
+- ⚡ **Performance** - Speed improvements
+- 🧪 **Testing** - Increase test coverage
+
+---
+
+## 🌟 Showcase
+
+<details>
+<summary><strong>🚀 Projects Built with LIVT</strong></summary>
+
+> **Want to showcase your project?** [Submit it here](https://github.com/devuni-cz/livt-starter-kit/issues/new?template=showcase.md)!
+
+### Community Projects
+
+- 🎯 **Your Project Here** - Be the first to showcase!
+- 💡 **Submit your creation** and inspire others
+
+### Example Applications
+
+```bash
+# Coming soon: Example implementations
+# - E-commerce store
+# - Blog/CMS system
+# - Dashboard application
+# - API-driven SPA
+```
+
+</details>
 
 ---
 
