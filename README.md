@@ -37,28 +37,34 @@
 
 ### Frontend Stack
 
-- **Vue 3** (3.5.x) - Composition API with `<script setup>` syntax
-- **Inertia.js** (2.x) - SPA experience without API complexity
-- **TailwindCSS** (4.x) - Utility-first CSS framework
-- **Vite** (7.x) - Lightning-fast build tool and dev server
-- **SSR Support** - Server-side rendering for better SEO
+| Feature         | Version | Description                                  |
+| --------------- | ------- | -------------------------------------------- |
+| **Vue 3**       | `3.5.x` | Composition API with `<script setup>` syntax |
+| **Inertia.js**  | `2.x`   | SPA experience without API complexity        |
+| **TailwindCSS** | `4.x`   | Utility-first CSS framework                  |
+| **Vite**        | `7.x`   | Lightning-fast build tool and dev server     |
+| **SSR Support** | ✅      | Server-side rendering for better SEO         |
 
 ### Backend Stack
 
-- **Laravel** (12.x) - Modern PHP framework with latest features
-- **PHP** (8.4+) - Latest PHP with performance improvements
-- **Ziggy** (2.x) - Use Laravel routes in JavaScript
-- **Sentry** (4.x) - Error tracking and performance monitoring
+| Feature     | Version | Description                               |
+| ----------- | ------- | ----------------------------------------- |
+| **Laravel** | `12.x`  | Modern PHP framework with latest features |
+| **PHP**     | `8.4+`  | Latest PHP with performance improvements  |
+| **Ziggy**   | `2.x`   | Use Laravel routes in JavaScript          |
+| **Sentry**  | `4.x`   | Error tracking and performance monitoring |
 
 ### Development Tools
 
-- **ESLint** - JavaScript/Vue linting with auto-fix
-- **Prettier** - Code formatting for consistent style
-- **Laravel Pint** - PHP code style fixer
-- **Larastan** - Static analysis for Laravel
-- **Rector** - Automated code upgrades and refactoring
-- **Pest PHP** - Modern testing framework
-- **Husky** - Git hooks for code quality
+| Tool             | Purpose                                 |
+| ---------------- | --------------------------------------- |
+| **ESLint**       | JavaScript/Vue linting with auto-fix    |
+| **Prettier**     | Code formatting for consistent style    |
+| **Laravel Pint** | PHP code style fixer                    |
+| **Larastan**     | Static analysis for Laravel             |
+| **Rector**       | Automated code upgrades and refactoring |
+| **Pest PHP**     | Modern testing framework                |
+| **Husky**        | Git hooks for code quality              |
 
 ---
 
