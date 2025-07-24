@@ -1,6 +1,6 @@
-# Contributing to LIVT Starter Kit
+# Contributing to VILT Starter Kit
 
-Thank you for your interest in contributing to the LIVT Starter Kit! We welcome contributions from the community and are pleased to have you join us.
+Thank you for your interest in contributing to the VILT Starter Kit! We welcome contributions from the community and are pleased to have you join us.
 
 ## 📋 Table of Contents
 
@@ -26,12 +26,12 @@ By participating in this project, you agree to abide by our code of conduct:
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
     ```bash
-    git clone https://github.com/YOUR-USERNAME/livt-starter-kit.git
-    cd livt-starter-kit
+    git clone https://github.com/YOUR-USERNAME/vilt-starter-kit.git
+    cd vilt-starter-kit
     ```
 3. **Add the upstream repository**:
     ```bash
-    git remote add upstream https://github.com/devuni-cz/livt-starter-kit.git
+    git remote add upstream https://github.com/devuni-cz/vilt-starter-kit.git
     ```
 
 ## 🛠️ Development Setup
@@ -227,6 +227,6 @@ Contributors will be:
 
 ---
 
-Thank you for contributing to LIVT Starter Kit! 🎉
+Thank you for contributing to VILT Starter Kit! 🎉
 
 **Happy coding!** 💻✨

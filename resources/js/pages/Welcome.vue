@@ -152,7 +152,7 @@ const getContentForOption = (option) => {
                         <div
                             class="flex-1 rounded-br-lg rounded-bl-lg bg-white p-6 pb-12 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-tl-lg lg:rounded-br-none lg:p-20"
                         >
-                            <h1 class="mb-1 font-medium">Starter kit for LIVT</h1>
+                            <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
 
                             <p class="mb-2 text-[13px] leading-[20px] text-[#706f6c]">
                                 We are happy to introduce you to the starter kit for

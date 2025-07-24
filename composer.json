@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "devuni/livt-starter-kit",
+    "name": "devuni/vilt-starter-kit",
     "type": "project",
     "description": "Starting template with the most modern Laravel features.",
     "keywords": [

@@ -1,8 +1,8 @@
-# 🚀 LIVT Starter Kit
+# 🚀 VILT Starter Kit
 
 <div align="center">
 
-![LIVT Logo](https://img.shields.io/badge/LIVT-Starter%20Kit-red?style=for-the-badge&logo=laravel&logoColor=white)
+![VILT Logo](https://img.shields.io/badge/VILT-Starter%20Kit-red?style=for-the-badge&logo=laravel&logoColor=white)
 
 **A modern, production-ready starter kit combining the power of Laravel, Inertia.js, Vue 3, and TailwindCSS**
 
@@ -11,21 +11,21 @@
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=flat&logo=vue.js&logoColor=white)](https://vuejs.org)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-[![Packagist](https://img.shields.io/packagist/v/devuni/livt-starter-kit?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/devuni/livt-starter-kit)
-[![Downloads](https://img.shields.io/packagist/dt/devuni/livt-starter-kit?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/devuni/livt-starter-kit)
+[![Packagist](https://img.shields.io/packagist/v/devuni/vilt-starter-kit?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/devuni/vilt-starter-kit)
+[![Downloads](https://img.shields.io/packagist/dt/devuni/vilt-starter-kit?style=flat&logo=packagist&logoColor=white)](https://packagist.org/packages/devuni/vilt-starter-kit)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat)](LICENSE)
 
-[What is LIVT?](#what-is-livt) • [Why Choose LIVT?](#why-choose-livt) • [Features](#features) • [Installation](#installation)
+[What is VILT?](#what-is-vilt) • [Why Choose VILT?](#why-choose-vilt) • [Features](#features) • [Installation](#installation)
 
 </div>
 
 ---
 
-## What is LIVT?
+## What is VILT?
 
-**LIVT** (Laravel + Inertia + Vue + TailwindCSS) is a carefully crafted starter kit that brings together the most powerful modern web development tools. Skip the tedious setup and jump straight into building amazing applications with a battle-tested foundation.
+**VILT** (Laravel + Inertia + Vue + TailwindCSS) is a carefully crafted starter kit that brings together the most powerful modern web development tools. Skip the tedious setup and jump straight into building amazing applications with a battle-tested foundation.
 
-## Why Choose LIVT?
+## Why Choose VILT?
 
 - 🏗️ **Production Ready** - Pre-configured with best practices and modern tooling
 - 🚀 **Developer Experience** - Hot reloading, TypeScript support, and modern dev tools
@@ -73,14 +73,14 @@
 ### Quick Start (Recommended)
 
 ```bash
-laravel new my-awesome-app --using=devuni/livt-starter-kit
+laravel new my-awesome-app --using=devuni/vilt-starter-kit
 ```
 
 ### Clone & Setup
 
 ```bash
 # Clone the repository
-git clone https://github.com/devuni-cz/livt-starter-kit.git my-project
+git clone https://github.com/devuni-cz/vilt-starter-kit.git my-project
 cd my-project
 
 # Install dependencies
@@ -225,6 +225,6 @@ Licensed under the [MIT license](LICENSE).
 
 ⭐ **If this helped you, please give it a star!** ⭐
 
-[🐛 Report Bug](https://github.com/devuni-cz/livt-starter-kit/issues) • [💡 Request Feature](https://github.com/devuni-cz/livt-starter-kit/issues)
+[🐛 Report Bug](https://github.com/devuni-cz/vilt-starter-kit/issues) • [💡 Request Feature](https://github.com/devuni-cz/vilt-starter-kit/issues)
 
 </div>
