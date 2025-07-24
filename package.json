@@ -9,7 +9,7 @@
         "prettier": "prettier --write \"resources/**/*.{js,vue,css}\" \"*.{js,json}\"",
         "pint": "php vendor/bin/pint . --config=pint.json",
         "rector": "php vendor/bin/rector process",
-        "analyse": "php vendor/bin/phpstan analyse",
+        "analyse": "php vendor/bin/phpstan analyse --memory-limit=8G",
         "lint": "eslint resources/js --fix",
         "lint:check": "eslint resources/js",
         "format": "npm run prettier && npm run pint && npm run lint"

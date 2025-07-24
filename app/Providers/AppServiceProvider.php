@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use Carbon\CarbonImmutable;
@@ -15,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
+    #[\Override]
     public function register(): void
     {
         //
@@ -34,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
             Model::shouldBeStrict();
         }
         if (app()->isProduction()) {
-            $this->app['request']->server->set('HTTPS', true);
+            request()->server->set('HTTPS', true);
             DB::prohibitDestructiveCommands();
         }
     }

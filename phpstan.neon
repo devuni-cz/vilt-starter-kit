@@ -1,12 +1,14 @@
 includes:
-    - vendor/larastan/larastan/extension.neon
+    - rules.neon
 
 parameters:
     paths:
-        - app/
-        - bootstrap/
-        - database/
-        - public/
-        - routes/
+        - app
+        - bootstrap
+        - database
+        - public
+        - routes
 
     level: max
+    checkUninitializedProperties: true
+    reportUnmatchedIgnoredErrors: true

@@ -32,6 +32,8 @@
         "mockery/mockery": "^1.6",
         "nunomaduro/collision": "^8.8",
         "pestphp/pest": "^3.8",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-strict-rules": "^2.0",
         "rector/rector": "^2.1"
     },
     "autoload": {
@@ -74,6 +76,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "phpstan": {
+            "includes": [
+                "extension.neon"
+            ]
         }
     },
     "config": {
@@ -82,7 +89,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         }
     },
     "minimum-stability": "stable",
