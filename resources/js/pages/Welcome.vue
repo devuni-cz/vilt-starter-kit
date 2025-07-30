@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from '@/layouts/AppLayout.vue'
 import { ref } from 'vue'
+import { ArrowDownRightIcon } from '@heroicons/vue/24/outline'
 
 const options = [
     { label: 'Laravel', value: 'laravel' },
@@ -13,11 +14,6 @@ const selectedOption = ref(options[0].value)
 
 const contentData = {
     laravel: [
-        {
-            title: 'Laravel',
-            version: '12.x',
-            href: 'https://laravel.com/',
-        },
         {
             id: 'laravel',
             text: 'laravel 12.x',
@@ -153,18 +149,20 @@ const getContentForOption = (option) => {
     <AppLayout>
         <template #content>
             <div class="relative flex min-h-screen flex-col items-center justify-center bg-white text-[#1b1b18]">
-                <main class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg lg:max-w-4xl lg:flex-row">
+                <main
+                    class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg px-2 lg:h-[60vh] lg:max-w-4xl lg:flex-row"
+                >
                     <div
-                        class="flex-1 rounded-t-lg bg-white p-6 pb-12 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-t-none lg:rounded-l-lg lg:p-20 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
+                        class="flex-1 rounded-t-lg bg-white p-6 pb-12 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-t-none lg:rounded-l-lg lg:p-16 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
                     >
                         <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
 
                         <p class="mb-2 text-[13px] leading-[20px] text-[#706f6c]">
                             We are happy to introduce you to the starter kit for
-                            <strong class="text-[#f53003]">Laravel</strong> with
-                            <strong class="text-[#f53003]">Inertia</strong> and
-                            <strong class="text-[#f53003]">Vue</strong> with
-                            <strong class="text-[#f53003]">TailwindCSS</strong>.
+                            <strong class="text-sky-500">Laravel</strong> with
+                            <strong class="text-sky-500">Inertia</strong> and
+                            <strong class="text-sky-500">Vue</strong> with
+                            <strong class="text-sky-500">TailwindCSS</strong>.
                         </p>
 
                         <ul class="mb-4 flex flex-col lg:mb-6">
@@ -174,7 +172,7 @@ const getContentForOption = (option) => {
                                     option.value !== options[options.length - 1].value
                                         ? 'before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:translate-y-1/2 before:border-l before:border-[#e3e3e0]'
                                         : '',
-                                    selectedOption === option.value ? 'font-semibold text-[#f53003]' : 'text-[#706f6c]',
+                                    selectedOption === option.value ? 'font-semibold text-sky-500' : 'text-[#706f6c]',
                                 ]"
                                 v-for="option in options"
                                 :key="option.value"
@@ -203,24 +201,39 @@ const getContentForOption = (option) => {
                                 <li
                                     v-for="(item, index) in getContentForOption(selectedOption)"
                                     :key="selectedOption + '-' + index"
-                                    class="text-md transform font-semibold opacity-100 transition-all delay-100 duration-500 hover:underline starting:opacity-0"
+                                    class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 hover:underline starting:opacity-0"
                                 >
-                                    <a
+                                    <div
                                         v-if="item.href"
-                                        :href="item.href"
-                                        target="_blank"
-                                        v-html="item.text"
-                                    />
+                                        class="inline-flex"
+                                    >
+                                        <span
+                                            class="relative right-2 rounded-full bg-sky-700 p-1 opacity-0 transition-opacity duration-150 ease-linear group-hover:opacity-100"
+                                        >
+                                            <ArrowDownRightIcon
+                                                class="size-4 text-white transition-transform delay-200 group-hover:-rotate-45"
+                                            />
+                                        </span>
+
+                                        <a
+                                            :href="item.href"
+                                            target="_blank"
+                                            v-html="item.text"
+                                            class=""
+                                        />
+                                    </div>
+
                                     <span
                                         v-else
                                         v-html="item.text"
+                                        class=""
                                     />
                                 </li>
                             </ul>
                         </div>
 
                         <div
-                            class="absolute bottom-1/2 left-1/2 hidden -translate-x-1/2 translate-y-1/2 opacity-20 blur-[5px] xl:block"
+                            class="absolute bottom-1/2 left-1/2 hidden -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px] xl:block"
                         >
                             <img
                                 v-if="selectedOption === 'laravel'"
