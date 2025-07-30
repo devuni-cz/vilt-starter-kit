@@ -7,9 +7,10 @@ import Footer from '@/layouts/partials/Footer.vue'
     <div class="flex min-h-screen flex-col justify-between">
         <Navbar />
 
-        <main class="">
+        <main>
             <slot name="content" />
         </main>
+
         <Footer />
     </div>
 </template>

@@ -2,6 +2,7 @@ import js from '@eslint/js'
 import globals from 'globals'
 import pluginVue from 'eslint-plugin-vue'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
+import vueParser from 'vue-eslint-parser'
 
 export default [
     // Base JavaScript configuration
@@ -42,7 +43,7 @@ export default [
             },
             ecmaVersion: 2022,
             sourceType: 'module',
-            parser: pluginVue.configs['flat/essential'][0].languageOptions.parser,
+            parser: vueParser,
             parserOptions: {
                 ecmaVersion: 2022,
                 sourceType: 'module',
@@ -135,6 +136,10 @@ export default [
             '_ide_helper.php',
             '_ide_helper_models.php',
             '.phpstorm.meta.php',
+
+            // Ignore PHP and Blade files
+            '**/*.php',
+            '**/*.blade.php',
         ],
     },
 ]
