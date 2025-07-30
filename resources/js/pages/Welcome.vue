@@ -1,5 +1,6 @@
 <script setup>
 import AppLayout from '@/layouts/AppLayout.vue'
+import BackgroundGradientAnimation from '@/components/BackgroundGradientAnimation.vue'
 import { ref } from 'vue'
 
 const options = [
@@ -157,7 +158,13 @@ const getContentForOption = (option) => {
                     <div
                         class="flex-1 rounded-t-lg bg-white p-6 pb-12 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-t-none lg:rounded-l-lg lg:p-20 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
                     >
-                        <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
+                        <div class="relative mb-4 overflow-hidden rounded-lg">
+                            <BackgroundGradientAnimation
+                                :interactive="false"
+                                container-class-name="absolute inset-0"
+                            />
+                            <h1 class="relative z-10 p-4 font-medium text-white">Starter kit for VILT</h1>
+                        </div>
 
                         <p class="mb-2 text-[13px] leading-[20px] text-[#706f6c]">
                             We are happy to introduce you to the starter kit for
