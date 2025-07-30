@@ -9,7 +9,7 @@ declare(strict_types=1);
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title inertia>{{ config('app.name', 'Autoauto.cz') }}</title>
+    <title inertia>{{ config('app.name', 'vilt-starter-kit') }}</title>
     @routes
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @inertiaHead
@@ -20,4 +20,4 @@ declare(strict_types=1);
 </body>
 
 </html>
-<?php 
+<?php
