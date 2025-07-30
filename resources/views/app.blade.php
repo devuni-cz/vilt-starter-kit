@@ -1,8 +1,3 @@
-<?php
-
-declare(strict_types=1);
-
-?>
 <!DOCTYPE html>
 <html lang="cs">
 
@@ -11,7 +6,7 @@ declare(strict_types=1);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title inertia>{{ config('app.name', 'vilt-starter-kit') }}</title>
     @routes
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/js/app.js', "resources/js/pages/{$page['component']}.vue"])
     @inertiaHead
 </head>
 
@@ -20,4 +15,3 @@ declare(strict_types=1);
 </body>
 
 </html>
-<?php
