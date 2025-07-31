@@ -3,13 +3,12 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeRector;
 use Rector\TypeDeclaration\Rector\Class_\ReturnTypeFromStrictTernaryRector;
-use Rector\TypeDeclaration\Rector\StmtsAwareInterface\DeclareStrictTypesRector;
-use Rector\CodeQuality\Rector\ClassMethod\OptionalParametersAfterRequiredRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeFromPropertyTypeRector;
-use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector;
 use Rector\TypeDeclaration\Rector\Closure\AddClosureVoidReturnTypeWhereNoReturnRector;
+use Rector\TypeDeclaration\Rector\Closure\ClosureReturnTypeRector;
+use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector;
+use Rector\TypeDeclaration\Rector\StmtsAwareInterface\DeclareStrictTypesRector;
 
 return RectorConfig::configure()
     ->withPaths([

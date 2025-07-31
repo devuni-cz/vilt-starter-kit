@@ -5,23 +5,21 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Carbon\CarbonImmutable;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\Vite;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Vite;
+use Illuminate\Support\ServiceProvider;
+use Override;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
      */
-    #[\Override]
-    public function register(): void
-    {
-        //
-    }
+    #[Override]
+    public function register(): void {}
 
     /**
      * Bootstrap any application services.
