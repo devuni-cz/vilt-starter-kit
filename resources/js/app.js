@@ -8,6 +8,7 @@ import * as Sentry from '@sentry/vue'
 import { ZiggyVue } from 'ziggy-js'
 
 createInertiaApp({
+    title: (title) => (title ? `${title}` : 'Vilt starter kit | Devuni'),
     resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
         const app = createApp({ render: () => h(App, props) })

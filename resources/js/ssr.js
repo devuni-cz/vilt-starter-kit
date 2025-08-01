@@ -4,8 +4,9 @@ import { renderToString } from '@vue/server-renderer'
 import { createSSRApp, h } from 'vue'
 import { ZiggyVue } from 'ziggy-js'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
+import * as Sentry from '@sentry/vue'
 
-const appName = import.meta.env.VITE_APP_NAME || 'Laravel'
+const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 
 createServer(
     (page) =>
@@ -15,7 +16,7 @@ createServer(
             title: (title) => `${title} - ${appName}`,
             resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')),
             setup({ App, props, plugin }) {
-                return createSSRApp({ render: () => h(App, props) })
+                const app = createSSRApp({ render: () => h(App, props) })
                     .use(plugin)
                     .component('Link', Link)
                     .component('Head', Head)
@@ -23,6 +24,18 @@ createServer(
                         ...page.props.ziggy,
                         location: new URL(page.props.ziggy.location),
                     })
+
+                Sentry.init({
+                    app,
+                    dsn: import.meta.env.VITE_SENTRY_DSN,
+                    tracesSampleRate: 1.0,
+                    environment: import.meta.env.VITE_APP_ENV,
+                })
+
+                return app
+            },
+            progress: {
+                color: '#4B5563',
             },
         }),
     {
