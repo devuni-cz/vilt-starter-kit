@@ -27,7 +27,7 @@ class ExampleTest extends TestCase
     {
         $this->assertNotNull(
             route('welcome', [], false),
-            'The "welcome" route does not exist.'
+            'The "welcome" route does not exist.',
         );
     }
 
@@ -36,7 +36,7 @@ class ExampleTest extends TestCase
         $this->assertEquals(
             '/',
             route('welcome', [], false),
-            'The "welcome" route is not correct.'
+            'The "welcome" route is not correct.',
         );
     }
 
@@ -45,7 +45,7 @@ class ExampleTest extends TestCase
         $response = $this->get(route('welcome'));
 
         $response->assertInertia(
-            fn ($page) => $page->component('Welcome')
+            fn($page) => $page->component('Welcome'),
         );
     }
 }
