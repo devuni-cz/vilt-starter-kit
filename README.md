@@ -221,7 +221,7 @@ Licensed under the [MIT license](LICENSE).
 
 <div align="center">
 
-**Made with ❤️ by [DevUni](https://github.com/devuni-cz)**
+**Made with ❤️ by [Devuni](https://github.com/devuni-cz)**
 
 ⭐ **If this helped you, please give it a star!** ⭐
 
