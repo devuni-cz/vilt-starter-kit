@@ -11,7 +11,11 @@
     "endOfLine": "lf",
     "vueIndentScriptAndStyle": false,
     "htmlWhitespaceSensitivity": "css",
-    "plugins": ["prettier-plugin-tailwindcss"],
+    "plugins": [
+        "prettier-plugin-organize-attributes",
+        "prettier-plugin-organize-imports",
+        "prettier-plugin-tailwindcss"
+    ],
     "overrides": [
         {
             "files": ["*.php"],
