@@ -1,10 +1,10 @@
 import '../css/app.css'
 import './bootstrap'
 
-import { createApp, h } from 'vue'
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3'
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import * as Sentry from '@sentry/vue'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
+import { createApp, h } from 'vue'
 import { ZiggyVue } from 'ziggy-js'
 
 createInertiaApp({

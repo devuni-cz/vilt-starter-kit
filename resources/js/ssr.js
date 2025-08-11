@@ -1,10 +1,10 @@
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3'
 import createServer from '@inertiajs/vue3/server'
+import * as Sentry from '@sentry/vue'
 import { renderToString } from '@vue/server-renderer'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { createSSRApp, h } from 'vue'
 import { ZiggyVue } from 'ziggy-js'
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
-import * as Sentry from '@sentry/vue'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 

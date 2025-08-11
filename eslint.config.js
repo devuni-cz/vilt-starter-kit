@@ -1,7 +1,7 @@
 import js from '@eslint/js'
-import globals from 'globals'
-import pluginVue from 'eslint-plugin-vue'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
+import pluginVue from 'eslint-plugin-vue'
+import globals from 'globals'
 import vueParser from 'vue-eslint-parser'
 
 export default [
