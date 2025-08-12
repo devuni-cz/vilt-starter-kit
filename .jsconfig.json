@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "resources/js/*"
+            ]
+        },
+        "checkJs": false
+    },
+    "include": [
+        "resources/js/**/*.js",
+        "resources/js/**/*.vue"
+    ],
+    "exclude": [
+        "node_modules",
+        "vendor",
+        "public",
+        "storage"
+    ],
+    "typeAcquisition": {
+        "enable": true
+    }
+}
