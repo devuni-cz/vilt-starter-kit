@@ -7,9 +7,12 @@ import * as Sentry from '@sentry/vue'
 import { createApp, h } from 'vue'
 import { ZiggyVue } from 'ziggy-js'
 
+const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
+
 createInertiaApp(
     {
-        title: (title) => (title ? `${title}` : 'Vilt starter kit | Devuni'),
+        title: (title) => (title ? `${title} - ${appName}` : appName),
+
         resolve: (name) => {
             const pages = import.meta.glob('./pages/**/*.vue', { eager: true })
             let page = pages[`./pages/${name}.vue`]
