@@ -6,19 +6,21 @@ import { createInertiaApp, Head, Link } from '@inertiajs/vue3'
 import * as Sentry from '@sentry/vue'
 import { createApp, h } from 'vue'
 import { ZiggyVue } from 'ziggy-js'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 
 createInertiaApp(
     {
         title: (title) => (title ? `${title} - ${appName}` : appName),
+        resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')),
 
-        resolve: (name) => {
-            const pages = import.meta.glob('./pages/**/*.vue', { eager: true })
-            let page = pages[`./pages/${name}.vue`]
-            page.default.layout = AppLayout
-            return page
-        },
+        // resolve: name => {
+        //     const pages = import.meta.glob('./pages/**/*.vue')
+        //     let page = pages[`./pages/${name}.vue`]
+        //     page.default.layout = AppLayout
+        //     return page
+        // },
 
         setup({ el, App, props, plugin }) {
             const app = createApp({ render: () => h(App, props) })
@@ -26,6 +28,7 @@ createInertiaApp(
                 .use(ZiggyVue)
                 .component('Head', Head)
                 .component('Link', Link)
+                .component('AppLayout', AppLayout)
 
             Sentry.init({
                 app,
