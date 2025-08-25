@@ -35,5 +35,27 @@ export default defineConfig({
 
     build: {
         sourcemap: true,
+
+        /*
+        |--------------------------------------------------------------------------
+        | If some packages are too large, you can manually split them into
+        | separate chunks to optimize loading performance.
+        |--------------------------------------------------------------------------
+        */
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    // Vue core and related packages
+                    vue: ['vue', '@inertiajs/vue3', '@vue/server-renderer'],
+
+                    // Laravel/Inertia specific
+                    laravel: ['ziggy-js', 'axios'],
+
+                    // Monitoring and error tracking
+                    sentry: ['@sentry/vue', '@sentry/tracing'],
+                },
+            },
+        },
+        chunkSizeWarningLimit: 1000, // Increase warning limit to 1000kb
     },
 })
