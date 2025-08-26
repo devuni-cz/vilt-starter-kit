@@ -58,7 +58,7 @@ const contentData = {
         },
         {
             id: 'components',
-            text: 'Globally registered components <br q/><span class="text-xs font-bold"> Link </span><span class="text-xs font-bold"> Head </span>',
+            text: 'Globally registered components <br q/><span class="text-xs font-bold"> Link </span>, <span class="text-xs font-bold"> Head </span>, <span class="text-xs font-bold"> AppLayout </span>',
         },
     ],
 
@@ -155,7 +155,7 @@ const getContentForOption = (option) => {
                 >
                     <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
 
-                    <p class="mb-2 text-[13px] leading-[20px] text-[#706f6c]">
+                    <p class="mb-2 text-[13px] leading-[20px] text-gray-400">
                         We are happy to introduce you to the starter kit for
                         <strong class="text-sky-500">Laravel</strong> with
                         <strong class="text-sky-500">Inertia</strong> and <strong class="text-sky-500">Vue</strong> with
@@ -167,9 +167,9 @@ const getContentForOption = (option) => {
                             class="relative flex cursor-pointer items-center gap-4 py-2"
                             :class="[
                                 option.value !== options[options.length - 1].value
-                                    ? 'before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:translate-y-1/2 before:border-l before:border-[#e3e3e0]'
+                                    ? 'before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:translate-y-1/2 before:border-l before:border-gray-200'
                                     : '',
-                                selectedOption === option.value ? 'font-semibold text-sky-500' : 'text-[#706f6c]',
+                                selectedOption === option.value ? 'font-semibold text-sky-500' : 'text-gray-400',
                             ]"
                             v-for="option in options"
                             :key="option.value"
@@ -177,9 +177,18 @@ const getContentForOption = (option) => {
                         >
                             <span class="relative bg-white py-1">
                                 <span
-                                    class="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[#e3e3e0] bg-[#FDFDFC] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)]"
+                                    class="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-gray-200 bg-[#FDFDFC] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)]"
                                 >
-                                    <span class="h-1.5 w-1.5 rounded-full bg-[#dbdbd7]" />
+                                    <span
+                                        :class="[
+                                            selectedOption === option.value ? 'bg-sky-500' : 'bg-gray-200',
+                                            'h-1.5 w-1.5 rounded-full',
+                                        ]"
+                                    />
+                                    <!-- <span :class="{
+                                        'bg-sky-500': selectedOption === option.value,
+                                        'bg-transparent': selectedOption !== option.value,
+                                    }, 'h-1.5 w-1.5 rounded-full '"></span> -->
                                 </span>
                             </span>
 
@@ -191,10 +200,10 @@ const getContentForOption = (option) => {
                 </div>
 
                 <div
-                    class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden bg-[#fff2f2] backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg"
+                    class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden bg-gradient-to-br from-sky-100 to-purple-100 backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg"
                 >
                     <div class="absolute inset-0 z-10 flex items-center justify-center p-6 text-center">
-                        <ul class="flex flex-col items-center gap-2 text-sm text-[#706f6c]">
+                        <ul class="flex flex-col items-center gap-2 text-sm text-gray-400">
                             <li
                                 v-for="(item, index) in getContentForOption(selectedOption)"
                                 :key="selectedOption + '-' + index"
@@ -216,7 +225,7 @@ const getContentForOption = (option) => {
                                         :href="item.href"
                                         target="_blank"
                                         v-html="item.text"
-                                        class=""
+                                        class="text-black"
                                     />
                                 </div>
 
@@ -235,27 +244,31 @@ const getContentForOption = (option) => {
                         <img
                             v-if="selectedOption === 'laravel'"
                             src="/images/laravel.webp"
+                            loading="lazy"
                             alt="Laravel"
                             class="size-48 object-contain"
                         />
 
                         <img
-                            v-if="selectedOption === 'vue'"
+                            v-else-if="selectedOption === 'vue'"
                             src="/images/vuejs.webp"
+                            loading="lazy"
                             alt="Vue.js"
                             class="size-48 object-contain"
                         />
 
                         <img
-                            v-if="selectedOption === 'inertia'"
+                            v-else-if="selectedOption === 'inertia'"
                             src="/images/inertiajs.webp"
-                            alt="Tailwind CSS"
+                            loading="lazy"
+                            alt="Inertia.js"
                             class="size-48 object-contain"
                         />
 
                         <img
-                            v-if="selectedOption === 'tailwindcss'"
+                            v-else
                             src="/images/tailwindcss.webp"
+                            loading="lazy"
                             alt="Tailwind CSS"
                             class="size-48 object-contain"
                         />
@@ -270,7 +283,7 @@ const getContentForOption = (option) => {
     </AppLayout>
 </template>
 
-<style>
+<style scoped>
 @keyframes flowIn {
     0% {
         opacity: 0;

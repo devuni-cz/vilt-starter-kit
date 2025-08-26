@@ -5,7 +5,7 @@ import laravel from 'laravel-vite-plugin'
 import path from 'path'
 import { defineConfig } from 'vite'
 
-export default defineConfig({
+export default defineConfig(({ command, mode, isSsrBuild }) => ({
     resolve: {
         alias: {
             'ziggy-js': path.resolve('vendor/tightenco/ziggy'),
@@ -40,22 +40,28 @@ export default defineConfig({
         |--------------------------------------------------------------------------
         | If some packages are too large, you can manually split them into
         | separate chunks to optimize loading performance.
+        | Only apply manual chunks for client builds, not SSR builds.
         |--------------------------------------------------------------------------
         */
         rollupOptions: {
             output: {
-                manualChunks: {
-                    // Vue core and related packages
-                    vue: ['vue', '@inertiajs/vue3', '@vue/server-renderer'],
+                // Only use manual chunks for client builds, not SSR
+                ...(isSsrBuild
+                    ? {}
+                    : {
+                          manualChunks: {
+                              // Vue core and related packages
+                              vue: ['vue', '@inertiajs/vue3', '@vue/server-renderer'],
 
-                    // Laravel/Inertia specific
-                    laravel: ['ziggy-js', 'axios'],
+                              // Laravel/Inertia specific
+                              laravel: ['ziggy-js', 'axios'],
 
-                    // Monitoring and error tracking
-                    sentry: ['@sentry/vue', '@sentry/tracing'],
-                },
+                              // Monitoring and error tracking
+                              sentry: ['@sentry/vue', '@sentry/tracing'],
+                          },
+                      }),
             },
         },
         chunkSizeWarningLimit: 1000, // Increase warning limit to 1000kb
     },
-})
+}))

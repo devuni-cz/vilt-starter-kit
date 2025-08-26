@@ -18,6 +18,7 @@ import { RocketLaunchIcon } from '@heroicons/vue/24/solid'
                 class="absolute inset-0"
                 aria-label="Open job offers"
                 rel="follow"
+                target="_blank"
                 href="https://devuni.cz/"
             />
         </div>

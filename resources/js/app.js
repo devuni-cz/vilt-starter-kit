@@ -4,9 +4,9 @@ import './bootstrap'
 import AppLayout from '@/layouts/AppLayout.vue'
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3'
 import * as Sentry from '@sentry/vue'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { createApp, h } from 'vue'
 import { ZiggyVue } from 'ziggy-js'
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 
