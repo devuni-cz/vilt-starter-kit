@@ -1,3 +1,4 @@
+import AppLayout from '@/layouts/AppLayout.vue'
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3'
 import createServer from '@inertiajs/vue3/server'
 import * as Sentry from '@sentry/vue'
@@ -20,6 +21,7 @@ createServer(
                     .use(plugin)
                     .component('Link', Link)
                     .component('Head', Head)
+                    .component('AppLayout', AppLayout)
                     .use(ZiggyVue, {
                         ...page.props.ziggy,
                         location: new URL(page.props.ziggy.location),
