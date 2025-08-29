@@ -8,7 +8,7 @@ import Footer from '@/layouts/partials/Footer.vue'
         <Navbar />
 
         <main>
-            <slot name="content" />
+            <slot />
         </main>
 
         <Footer />

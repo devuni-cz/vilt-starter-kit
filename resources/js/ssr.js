@@ -1,3 +1,4 @@
+import AppLayout from '@/layouts/AppLayout.vue'
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3'
 import createServer from '@inertiajs/vue3/server'
 import * as Sentry from '@sentry/vue'
@@ -13,13 +14,14 @@ createServer(
         createInertiaApp({
             page,
             render: renderToString,
-            title: (title) => `${title} - ${appName}`,
+            title: (title) => (title ? `${title} - ${appName}` : appName),
             resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')),
             setup({ App, props, plugin }) {
                 const app = createSSRApp({ render: () => h(App, props) })
                     .use(plugin)
                     .component('Link', Link)
                     .component('Head', Head)
+                    .component('AppLayout', AppLayout)
                     .use(ZiggyVue, {
                         ...page.props.ziggy,
                         location: new URL(page.props.ziggy.location),

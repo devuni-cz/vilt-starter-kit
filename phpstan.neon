@@ -2,13 +2,12 @@ includes:
     - rules.neon
 
 parameters:
+    level: max
     paths:
         - app
         - bootstrap
         - database
         - public
         - routes
-
-    level: max
     checkUninitializedProperties: true
     reportUnmatchedIgnoredErrors: true
