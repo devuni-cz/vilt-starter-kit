@@ -203,18 +203,18 @@ const getContentForOption = (option) => {
                     class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden bg-gradient-to-br from-sky-100 to-purple-100 backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg"
                 >
                     <div class="absolute inset-0 z-10 flex items-center justify-center p-6 text-center">
-                        <ul class="flex flex-col items-center gap-2 text-sm text-gray-400">
+                        <ul class="flex flex-col items-center gap-3 text-sm text-gray-400">
                             <li
                                 v-for="(item, index) in getContentForOption(selectedOption)"
                                 :key="selectedOption + '-' + index"
-                                class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 hover:underline starting:opacity-0"
+                                class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 starting:opacity-0"
                             >
                                 <div
                                     v-if="item.href"
                                     class="inline-flex"
                                 >
                                     <span
-                                        class="relative right-2 rounded-full bg-sky-700 p-1 opacity-0 transition-opacity duration-150 ease-linear group-hover:opacity-100"
+                                        class="relative right-2 hidden rounded-full bg-sky-700 p-1 opacity-0 transition-opacity duration-150 ease-linear group-hover:opacity-100 lg:block"
                                     >
                                         <ArrowDownRightIcon
                                             class="size-4 text-white transition-transform delay-200 group-hover:-rotate-45"
@@ -225,7 +225,7 @@ const getContentForOption = (option) => {
                                         :href="item.href"
                                         target="_blank"
                                         v-html="item.text"
-                                        class="text-black"
+                                        class="text-black hover:underline"
                                     />
                                 </div>
 
@@ -239,7 +239,7 @@ const getContentForOption = (option) => {
                     </div>
 
                     <div
-                        class="absolute bottom-1/2 left-1/2 hidden -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px] xl:block"
+                        class="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px] block"
                     >
                         <img
                             v-if="selectedOption === 'laravel'"
