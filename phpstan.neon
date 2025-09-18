@@ -4,10 +4,4 @@ includes:
 parameters:
     level: max
     paths:
-        - app
-        - bootstrap
-        - database
-        - public
-        - routes
-    checkUninitializedProperties: true
-    reportUnmatchedIgnoredErrors: true
+        - app/

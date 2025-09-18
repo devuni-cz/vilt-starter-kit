@@ -9,7 +9,7 @@ use Inertia\Middleware;
 use Override;
 use Tighten\Ziggy\Ziggy;
 
-class HandleInertiaRequests extends Middleware
+final class HandleInertiaRequests extends Middleware
 {
     /**
      * The root template that's loaded on the first page visit.
@@ -45,7 +45,7 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
 
             'ziggy' => [
-                ...(new Ziggy())->toArray(),
+                ...new Ziggy()->toArray(),
                 'location' => $request->url(),
             ],
         ];

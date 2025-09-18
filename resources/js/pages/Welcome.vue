@@ -239,7 +239,7 @@ const getContentForOption = (option) => {
                     </div>
 
                     <div
-                        class="absolute bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px] block"
+                        class="absolute bottom-1/2 left-1/2 block -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px]"
                     >
                         <img
                             v-if="selectedOption === 'laravel'"
