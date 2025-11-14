@@ -32,3 +32,9 @@ composer.lock
 .env.sentry-build-plugin
 
 sitemap.xml
+
+
+# wayfinder
+/resources/js/actions
+/resources/js/routes
+/resources/js/wayfinder

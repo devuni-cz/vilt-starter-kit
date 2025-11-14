@@ -1,0 +1,10 @@
+{
+    "agents": [
+        "copilot"
+    ],
+    "editors": [
+        "vscode"
+    ],
+    "guidelines": [],
+    "herd_mcp": true
+}

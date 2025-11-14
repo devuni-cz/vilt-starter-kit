@@ -7,7 +7,6 @@ namespace App\Http\Middleware;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
 use Override;
-use Tighten\Ziggy\Ziggy;
 
 final class HandleInertiaRequests extends Middleware
 {
@@ -43,11 +42,6 @@ final class HandleInertiaRequests extends Middleware
     {
         return [
             ...parent::share($request),
-
-            'ziggy' => [
-                ...new Ziggy()->toArray(),
-                'location' => $request->url(),
-            ],
         ];
     }
 }

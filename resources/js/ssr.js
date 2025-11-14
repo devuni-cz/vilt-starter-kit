@@ -5,7 +5,6 @@ import * as Sentry from '@sentry/vue'
 import { renderToString } from '@vue/server-renderer'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { createSSRApp, h } from 'vue'
-import { ZiggyVue } from 'ziggy-js'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 
@@ -15,17 +14,18 @@ createServer(
             page,
             render: renderToString,
             title: (title) => (title ? `${title} - ${appName}` : appName),
-            resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')),
+            resolve: async (name) => {
+                const page = await resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue'))
+
+                page.default.layout = name.startsWith('Auth/') ? null : AppLayout
+
+                return page
+            },
             setup({ App, props, plugin }) {
                 const app = createSSRApp({ render: () => h(App, props) })
                     .use(plugin)
                     .component('Link', Link)
                     .component('Head', Head)
-                    .component('AppLayout', AppLayout)
-                    .use(ZiggyVue, {
-                        ...page.props.ziggy,
-                        location: new URL(page.props.ziggy.location),
-                    })
 
                 Sentry.init({
                     app,

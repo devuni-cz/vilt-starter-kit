@@ -15,15 +15,16 @@
         "format": "npm run prettier && npm run pint && npm run lint"
     },
     "devDependencies": {
+        "@eslint/js": "^9.39.1",
+        "@laravel/vite-plugin-wayfinder": "^0.1.7",
+        "@tailwindcss/vite": "^4.1.17",
         "@vitejs/plugin-vue": "^6.0.1",
-        "axios": "^1.12.2",
+        "axios": "^1.13.2",
         "concurrently": "^9.2.1",
-        "@eslint/js": "^9.38.0",
-        "eslint": "^9.38.0",
+        "eslint": "^9.39.1",
         "eslint-plugin-unused-imports": "^4.3.0",
         "eslint-plugin-vue": "^10.5.1",
-        "vue-eslint-parser": "^10.2.0",
-        "globals": "^16.4.0",
+        "globals": "^16.5.0",
         "husky": "^9.1.7",
         "laravel-vite-plugin": "^2.0.1",
         "lint-staged": "^16.2.6",
@@ -31,23 +32,23 @@
         "prettier-plugin-organize-attributes": "^1.0.0",
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.1",
-        "@tailwindcss/vite": "^4.1.16",
-        "tailwindcss": "^4.1.16",
-        "vite": "^7.1.12"
+        "tailwindcss": "^4.1.17",
+        "vite": "^7.2.2",
+        "vue-eslint-parser": "^10.2.0"
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "@inertiajs/vue3": "^2.2.11",
+        "@inertiajs/vue3": "^2.2.16",
         "@sentry/tracing": "^7.120.4",
-        "@sentry/vite-plugin": "^4.5.0",
-        "@sentry/vue": "^10.22.0",
-        "@vue/server-renderer": "^3.5.22",
-        "vue": "^3.5.22",
+        "@sentry/vite-plugin": "^4.6.0",
+        "@sentry/vue": "^10.25.0",
+        "@vue/server-renderer": "^3.5.24",
+        "vue": "^3.5.24",
         "ziggy-js": "^2.6.0"
     },
     "optionalDependencies": {
-        "@rollup/rollup-linux-x64-gnu": "4.52.5",
-        "@tailwindcss/oxide-linux-x64-gnu": "^4.1.16",
+        "@rollup/rollup-linux-x64-gnu": "4.53.2",
+        "@tailwindcss/oxide-linux-x64-gnu": "^4.1.17",
         "lightningcss-linux-x64-gnu": "^1.30.2"
     },
     "lint-staged": {

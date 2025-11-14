@@ -51,7 +51,6 @@
 | ----------- | ------- | ----------------------------------------- |
 | **Laravel** | `12.x`  | Modern PHP framework with latest features |
 | **PHP**     | `8.4+`  | Latest PHP with performance improvements  |
-| **Ziggy**   | `2.x`   | Use Laravel routes in JavaScript          |
 | **Sentry**  | `4.x`   | Error tracking and performance monitoring |
 
 ### Development Tools

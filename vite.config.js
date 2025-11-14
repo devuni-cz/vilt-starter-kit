@@ -4,15 +4,16 @@ import vue from '@vitejs/plugin-vue'
 import laravel from 'laravel-vite-plugin'
 import path from 'path'
 import { defineConfig } from 'vite'
+import { wayfinder } from "@laravel/vite-plugin-wayfinder";
 
 export default defineConfig(({ command, mode, isSsrBuild }) => ({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'resources/js'),
-            'ziggy-js': path.resolve('vendor/tightenco/ziggy'),
         },
     },
     plugins: [
+        wayfinder(),
         tailwindcss(),
         laravel({
             input: 'resources/js/app.js',

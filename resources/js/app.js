@@ -13,14 +13,19 @@ const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 createInertiaApp(
     {
         title: (title) => (title ? `${title} - ${appName}` : appName),
-        resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue')),
+        resolve: async (name) => {
+            const page = await resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue'))
+
+            page.default.layout = name.startsWith('Auth/') ? null : AppLayout
+
+            return page
+        },
         setup({ el, App, props, plugin }) {
             const app = createApp({ render: () => h(App, props) })
                 .use(plugin)
                 .use(ZiggyVue)
                 .component('Head', Head)
                 .component('Link', Link)
-                .component('AppLayout', AppLayout)
 
             Sentry.init({
                 app,
