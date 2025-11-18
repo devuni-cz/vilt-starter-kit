@@ -1,10 +1,10 @@
+import { wayfinder } from '@laravel/vite-plugin-wayfinder'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import laravel from 'laravel-vite-plugin'
 import path from 'path'
 import { defineConfig } from 'vite'
-import { wayfinder } from "@laravel/vite-plugin-wayfinder";
 
 export default defineConfig(({ command, mode, isSsrBuild }) => ({
     resolve: {
@@ -56,7 +56,7 @@ export default defineConfig(({ command, mode, isSsrBuild }) => ({
                               vue: ['vue', '@inertiajs/vue3', '@vue/server-renderer'],
 
                               // Laravel/Inertia specific
-                              laravel: ['ziggy-js', 'axios'],
+                              laravel: ['axios'],
 
                               // Monitoring and error tracking
                               sentry: ['@sentry/vue', '@sentry/tracing'],
