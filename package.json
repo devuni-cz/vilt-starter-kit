@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "build:ssr": "vite build --ssr",
+        "build:ssr": "vite build && vite build --ssr",
         "prettier": "prettier --write \"resources/**/*.{js,vue,css}\" \"*.{js,json}\"",
         "pint": "php vendor/bin/pint . --config=pint.json",
         "rector": "php vendor/bin/rector process",
