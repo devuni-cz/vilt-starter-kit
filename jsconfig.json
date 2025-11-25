@@ -6,7 +6,7 @@
         },
         "checkJs": false
     },
-    "include": ["resources/js/**/*.js", "resources/js/**/*.vue"],
+    "include": ["resources/js/**/*.js", "resources/js/**/*.vue", "resources/js/app.js"],
     "exclude": ["node_modules", "vendor", "public", "storage"],
     "typeAcquisition": {
         "enable": true
