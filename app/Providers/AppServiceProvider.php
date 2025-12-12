@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Override;
+use Illuminate\Support\Facades\URL;
 
 final class AppServiceProvider extends ServiceProvider
 {
@@ -35,7 +36,7 @@ final class AppServiceProvider extends ServiceProvider
             Model::shouldBeStrict();
         }
         if (app()->isProduction()) {
-            request()->server->set('HTTPS', true);
+            URL::forceScheme('https');
             DB::prohibitDestructiveCommands();
         }
     }
