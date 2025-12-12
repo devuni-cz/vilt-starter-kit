@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\CodingStyle\Rector\Enum_\EnumCaseToPascalCaseRector;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
 
 return RectorConfig::configure()
@@ -23,4 +24,7 @@ return RectorConfig::configure()
         earlyReturn: true,
         strictBooleans: true,
     )
+    ->withRules([
+        EnumCaseToPascalCaseRector::class,
+    ])
     ->withPhpSets(php84: true);
