@@ -155,7 +155,7 @@ const getContentForOption = (option) => {
             class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg px-2 lg:h-[60vh] lg:max-w-4xl lg:flex-row"
         >
             <div
-                class="flex-1 rounded-t-lg bg-white p-6 pb-12 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] lg:rounded-t-none lg:rounded-l-lg lg:p-16 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
+                class="flex-1 rounded-t-lg bg-white p-6 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] md:pb-12 lg:rounded-t-none lg:rounded-l-lg lg:p-16 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
             >
                 <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
 
