@@ -7,7 +7,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { createSSRApp, h } from 'vue'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
-const ssrPort = parseInt(process.env.VITE_INERTIA_SSR_PORT) || 13701
+const ssrPort = parseInt(import.meta.env.VITE_INERTIA_SSR_PORT) || 13701
 
 createServer(
     (page) =>
