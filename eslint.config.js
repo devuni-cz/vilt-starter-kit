@@ -89,6 +89,13 @@ export default [
             // Override Vue rules
             'vue/multi-word-component-names': 'off',
 
+            'vue/block-order': [
+                'error',
+                {
+                    order: ['script', 'template', 'style'],
+                },
+            ],
+
             // Unused imports for Vue files
             'unused-imports/no-unused-imports': 'error',
             'unused-imports/no-unused-vars': [
