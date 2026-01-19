@@ -9,7 +9,7 @@
     "tabWidth": 4,
     "useTabs": false,
     "endOfLine": "lf",
-    "vueIndentScriptAndStyle": false,
+    "vueIndentScriptAndStyle": true,
     "htmlWhitespaceSensitivity": "css",
     "plugins": [
         "prettier-plugin-organize-attributes",
