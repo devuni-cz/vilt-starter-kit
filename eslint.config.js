@@ -89,6 +89,16 @@ export default [
             // Override Vue rules
             'vue/multi-word-component-names': 'off',
 
+            // Enforce PascalCase for component names in templates (e.g., NuxtLink instead of nuxt-link)
+            'vue/component-name-in-template-casing': [
+                'error',
+                'PascalCase',
+                {
+                    registeredComponentsOnly: false,
+                },
+            ],
+
+            // Enforce component tags order: script -> template -> style
             'vue/block-order': [
                 'error',
                 {
