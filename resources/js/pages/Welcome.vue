@@ -1,6 +1,10 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { usePage } from '@inertiajs/vue3'
 import { ArrowDownRightIcon } from '@heroicons/vue/24/outline'
+
+const page = usePage()
+const ssrEnabled = computed(() => page.props.ssr)
 
 const options = [
     { label: 'Laravel', value: 'laravel' },
@@ -151,135 +155,167 @@ const getContentForOption = (option) => {
 
 <template>
     <div class="relative flex min-h-screen flex-col items-center justify-center bg-white text-[#1b1b18]">
-        <main
-            class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg px-2 lg:h-[60vh] lg:max-w-4xl lg:flex-row"
-        >
-            <div
-                class="flex-1 rounded-t-lg bg-white p-6 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] md:pb-12 lg:rounded-t-none lg:rounded-l-lg lg:p-16 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
+        <main class="flex flex-col items-center justify-center space-y-5">
+            <section>
+                <div
+                    v-if="ssrEnabled"
+                    class="z-50 flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-medium text-emerald-700 shadow-sm"
+                >
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                        />
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                    </span>
+                    SSR is running
+                </div>
+
+                <div
+                    v-else
+                    class="z-50 flex items-center gap-2 rounded-full bg-yellow-100 px-3 py-1.5 text-xs font-medium text-yellow-700 shadow-sm"
+                >
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="absolute inline-flex h-full w-full animate-ping rounded-full bg-yellow-400 opacity-75"
+                        />
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-yellow-500" />
+                    </span>
+                    SSR is not running
+                </div>
+            </section>
+
+            <section
+                class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg px-2 lg:h-[60vh] lg:max-w-4xl lg:flex-row"
             >
-                <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
+                <div
+                    class="flex-1 rounded-t-lg bg-white p-6 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] md:pb-12 lg:rounded-t-none lg:rounded-l-lg lg:p-16 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
+                >
+                    <h1 class="mb-1 font-medium">Starter kit for VILT</h1>
 
-                <p class="mb-2 text-[13px] leading-[20px] text-gray-400">
-                    We are happy to introduce you to the starter kit for
-                    <strong class="text-sky-500">Laravel</strong> with <strong class="text-sky-500">Inertia</strong> and
-                    <strong class="text-sky-500">Vue</strong> with <strong class="text-sky-500">TailwindCSS</strong>.
-                </p>
+                    <p class="mb-2 text-[13px] leading-[20px] text-gray-400">
+                        We are happy to introduce you to the starter kit for
+                        <strong class="text-sky-500">Laravel</strong> with
+                        <strong class="text-sky-500">Inertia</strong> and <strong class="text-sky-500">Vue</strong> with
+                        <strong class="text-sky-500">TailwindCSS</strong>.
+                    </p>
 
-                <ul class="mb-4 flex flex-col lg:mb-6">
-                    <li
-                        class="relative flex cursor-pointer items-center gap-4 py-2"
-                        :class="[
-                            option.value !== options[options.length - 1].value
-                                ? 'before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:translate-y-1/2 before:border-l before:border-gray-200'
-                                : '',
-                            selectedOption === option.value ? 'font-semibold text-sky-500' : 'text-gray-400',
-                        ]"
-                        v-for="option in options"
-                        :key="option.value"
-                        @mouseover="selectedOption = option.value"
-
-                    >
-                        <span class="relative bg-white py-1">
-                            <span
-                                class="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-gray-200 bg-[#FDFDFC] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)]"
-                            >
-                                <span
-                                    :class="[
-                                        selectedOption === option.value ? 'bg-sky-500' : 'bg-gray-200',
-                                        'h-1.5 w-1.5 rounded-full',
-                                    ]"
-                                />
-                                <!-- <span :class="{
-                                        'bg-sky-500': selectedOption === option.value,
-                                        'bg-transparent': selectedOption !== option.value,
-                                    }, 'h-1.5 w-1.5 rounded-full '"></span> -->
-                            </span>
-                        </span>
-
-                        <span>
-                            {{ option.label }}
-                        </span>
-                    </li>
-                </ul>
-            </div>
-
-            <div
-                class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden bg-gradient-to-br from-sky-100 to-purple-100 backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg"
-            >
-                <div class="absolute inset-0 z-10 flex items-center justify-center p-6 text-center">
-                    <ul class="flex flex-col items-center gap-3 text-sm text-gray-400">
+                    <ul class="mb-4 flex flex-col lg:mb-6">
                         <li
-                            v-for="(item, index) in getContentForOption(selectedOption)"
-                            :key="selectedOption + '-' + index"
-                            class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 starting:opacity-0"
+                            class="relative flex cursor-pointer items-center gap-4 py-2"
+                            :class="[
+                                option.value !== options[options.length - 1].value
+                                    ? 'before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:translate-y-1/2 before:border-l before:border-gray-200'
+                                    : '',
+                                selectedOption === option.value ? 'font-semibold text-sky-500' : 'text-gray-400',
+                            ]"
+                            v-for="option in options"
+                            :key="option.value"
+                            @mouseover="selectedOption = option.value"
                         >
-                            <div
-                                v-if="item.href"
-                                class="inline-flex"
-                            >
+                            <span class="relative bg-white py-1">
                                 <span
-                                    class="relative right-2 hidden rounded-full bg-sky-700 p-1 opacity-0 transition-opacity duration-150 ease-linear group-hover:opacity-100 lg:block"
+                                    class="flex h-3.5 w-3.5 items-center justify-center rounded-full border border-gray-200 bg-[#FDFDFC] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)]"
                                 >
-                                    <ArrowDownRightIcon
-                                        class="size-4 text-white transition-transform delay-200 group-hover:-rotate-45"
+                                    <span
+                                        :class="[
+                                            selectedOption === option.value ? 'bg-sky-500' : 'bg-gray-200',
+                                            'h-1.5 w-1.5 rounded-full',
+                                        ]"
                                     />
+                                    <!-- <span :class="{
+                                            'bg-sky-500': selectedOption === option.value,
+                                            'bg-transparent': selectedOption !== option.value,
+                                        }, 'h-1.5 w-1.5 rounded-full '"></span> -->
                                 </span>
+                            </span>
 
-                                <a
-                                    :href="item.href"
-                                    target="_blank"
-                                    v-html="item.text"
-                                    class="text-black hover:underline"
-                                />
-                            </div>
-
-                            <span
-                                v-else
-                                v-html="item.text"
-                                class=""
-                            />
+                            <span>
+                                {{ option.label }}
+                            </span>
                         </li>
                     </ul>
                 </div>
 
-                <div class="absolute bottom-1/2 left-1/2 block -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px]">
-                    <img
-                        v-if="selectedOption === 'laravel'"
-                        src="/images/laravel.webp"
-                        loading="lazy"
-                        alt="Laravel"
-                        class="size-48 object-contain"
-                    />
+                <div
+                    class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden bg-gradient-to-br from-sky-100 to-purple-100 backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg"
+                >
+                    <div class="absolute inset-0 z-10 flex items-center justify-center p-6 text-center">
+                        <ul class="flex flex-col items-center gap-3 text-sm text-gray-400">
+                            <li
+                                v-for="(item, index) in getContentForOption(selectedOption)"
+                                :key="selectedOption + '-' + index"
+                                class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 starting:opacity-0"
+                            >
+                                <div
+                                    v-if="item.href"
+                                    class="inline-flex"
+                                >
+                                    <span
+                                        class="relative right-2 hidden rounded-full bg-sky-700 p-1 opacity-0 transition-opacity duration-150 ease-linear group-hover:opacity-100 lg:block"
+                                    >
+                                        <ArrowDownRightIcon
+                                            class="size-4 text-white transition-transform delay-200 group-hover:-rotate-45"
+                                        />
+                                    </span>
 
-                    <img
-                        v-else-if="selectedOption === 'vue'"
-                        src="/images/vuejs.webp"
-                        loading="lazy"
-                        alt="Vue.js"
-                        class="size-48 object-contain"
-                    />
+                                    <a
+                                        :href="item.href"
+                                        target="_blank"
+                                        v-html="item.text"
+                                        class="text-black hover:underline"
+                                    />
+                                </div>
 
-                    <img
-                        v-else-if="selectedOption === 'inertia'"
-                        src="/images/inertiajs.webp"
-                        loading="lazy"
-                        alt="Inertia.js"
-                        class="size-48 object-contain"
-                    />
+                                <span
+                                    v-else
+                                    v-html="item.text"
+                                    class=""
+                                />
+                            </li>
+                        </ul>
+                    </div>
 
-                    <img
-                        v-else
-                        src="/images/tailwindcss.webp"
-                        loading="lazy"
-                        alt="Tailwind CSS"
-                        class="size-48 object-contain"
+                    <div
+                        class="absolute bottom-1/2 left-1/2 block -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px]"
+                    >
+                        <img
+                            v-if="selectedOption === 'laravel'"
+                            src="/images/laravel.webp"
+                            loading="lazy"
+                            alt="Laravel"
+                            class="size-48 object-contain"
+                        />
+
+                        <img
+                            v-else-if="selectedOption === 'vue'"
+                            src="/images/vuejs.webp"
+                            loading="lazy"
+                            alt="Vue.js"
+                            class="size-48 object-contain"
+                        />
+
+                        <img
+                            v-else-if="selectedOption === 'inertia'"
+                            src="/images/inertiajs.webp"
+                            loading="lazy"
+                            alt="Inertia.js"
+                            class="size-48 object-contain"
+                        />
+
+                        <img
+                            v-else
+                            src="/images/tailwindcss.webp"
+                            loading="lazy"
+                            alt="Tailwind CSS"
+                            class="size-48 object-contain"
+                        />
+                    </div>
+
+                    <div
+                        class="absolute inset-0 rounded-b-lg shadow-[inset_0px_-1px_0px_1px_rgba(26,26,0,0.16)] lg:overflow-hidden lg:rounded-r-lg lg:rounded-bl-none lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
                     />
                 </div>
-
-                <div
-                    class="absolute inset-0 rounded-b-lg shadow-[inset_0px_-1px_0px_1px_rgba(26,26,0,0.16)] lg:overflow-hidden lg:rounded-r-lg lg:rounded-bl-none lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
-                />
-            </div>
+            </section>
         </main>
     </div>
 </template>

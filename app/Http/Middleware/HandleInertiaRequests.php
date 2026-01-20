@@ -6,6 +6,8 @@ namespace App\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Inertia\Middleware;
+use Inertia\Ssr\Gateway;
+use Inertia\Ssr\HasHealthCheck;
 use Override;
 
 final class HandleInertiaRequests extends Middleware
@@ -40,8 +42,11 @@ final class HandleInertiaRequests extends Middleware
     #[Override]
     public function share(Request $request): array
     {
+        $gateway = app(Gateway::class);
+
         return [
             ...parent::share($request),
+            'ssr' => $gateway instanceof HasHealthCheck && $gateway->isHealthy(),
         ];
     }
 }
