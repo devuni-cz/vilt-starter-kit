@@ -176,7 +176,8 @@ const getContentForOption = (option) => {
                         ]"
                         v-for="option in options"
                         :key="option.value"
-                        @click="selectedOption = option.value"
+                        @mouseover="selectedOption = option.value"
+
                     >
                         <span class="relative bg-white py-1">
                             <span
