@@ -12,8 +12,14 @@ return RectorConfig::configure()
         __DIR__.'/bootstrap/app.php',
         __DIR__.'/database',
         __DIR__.'/public',
+        __DIR__.'/routes',
+        __DIR__.'/config',
+        __DIR__.'/tests',
     ])
     ->withSkip([
+        __DIR__.'/bootstrap/cache',
+        __DIR__.'/storage',
+        __DIR__.'/vendor',
         AddOverrideAttributeToOverriddenMethodsRector::class,
     ])
     ->withPreparedSets(
