@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
 use Rector\CodingStyle\Rector\Enum_\EnumCaseToPascalCaseRector;
+use RectorLaravel\Rector\StaticCall\EloquentMagicMethodToQueryBuilderRector;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
 
 return RectorConfig::configure()
@@ -32,5 +33,15 @@ return RectorConfig::configure()
     )
     ->withRules([
         EnumCaseToPascalCaseRector::class,
+    ])
+    ->withConfiguredRule(EloquentMagicMethodToQueryBuilderRector::class, [
+        'exclude_methods' => [
+            'find',
+            'findOrFail',
+            'first',
+            'firstOrFail',
+            'get',
+            'all',
+        ],
     ])
     ->withPhpSets(php84: true);
