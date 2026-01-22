@@ -32,7 +32,6 @@ final class AppServiceProvider extends ServiceProvider
         Vite::prefetch(concurrency: 3);
 
         if (app()->isLocal()) {
-            Model::preventLazyLoading();
             Model::shouldBeStrict();
         }
         if (app()->isProduction()) {
