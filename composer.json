@@ -16,29 +16,29 @@
     "license": "MIT",
     "require": {
         "php": "^8.4",
-        "inertiajs/inertia-laravel": "^2.0.18",
-        "laravel/framework": "^12.44.0",
-        "laravel/tinker": "^2.10.2",
-        "laravel/wayfinder": "^0.1.12",
-        "sentry/sentry-laravel": "^4.20.0"
+        "inertiajs/inertia-laravel": "^2.0.19",
+        "laravel/framework": "^12.49.0",
+        "laravel/tinker": "^2.11.0",
+        "laravel/wayfinder": "^0.1.13",
+        "sentry/sentry-laravel": "^4.20.1"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.16.3",
-        "driftingly/rector-laravel": "^2.1",
+        "barryvdh/laravel-debugbar": "^4.0.5",
+        "driftingly/rector-laravel": "^2.1.9",
         "fakerphp/faker": "^1.24.1",
-        "larastan/larastan": "^3.8.1",
+        "larastan/larastan": "^3.9.1",
         "laravel/boost": "^2.0.4",
         "laravel/pail": "^1.2.4",
-        "laravel/pint": "^1.26.0",
+        "laravel/pint": "^1.27.0",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.3",
-        "pestphp/pest": "^4.3.0",
-        "pestphp/pest-plugin-browser": "^4.1.1",
+        "pestphp/pest": "^4.3.2",
+        "pestphp/pest-plugin-browser": "^4.2.1",
         "pestphp/pest-plugin-laravel": "^4.0.0",
         "pestphp/pest-plugin-type-coverage": "^4.0.3",
         "phpstan/extension-installer": "^1.4.3",
-        "phpstan/phpstan-strict-rules": "^2.0.7",
-        "rector/rector": "^2.3.0"
+        "phpstan/phpstan-strict-rules": "^2.0.8",
+        "rector/rector": "^2.3.5"
     },
     "autoload": {
         "psr-4": {
