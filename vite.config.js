@@ -13,7 +13,9 @@ export default defineConfig(({ command, mode, isSsrBuild }) => ({
         },
     },
     plugins: [
-        wayfinder(),
+        wayfinder({
+            formVariants: true,
+        }),
         tailwindcss(),
         laravel({
             input: 'resources/js/app.js',
