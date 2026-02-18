@@ -1,26 +1,24 @@
 version: 2
 
 updates:
-  # PHP / Laravel dependencies
-  - package-ecosystem: "composer"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "composer"
-    labels:
-      - "dependencies"
-      - "php"
+    - package-ecosystem: 'composer'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+      open-pull-requests-limit: 5
+      commit-message:
+          prefix: 'composer'
+      labels:
+          - 'dependencies'
+          - 'php'
 
-  # Frontend dependencies (Vue, Inertia, Tailwind, Vite...)
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-    commit-message:
-      prefix: "npm"
-    labels:
-      - "dependencies"
-      - "frontend"
+    - package-ecosystem: 'npm'
+      directory: '/'
+      schedule:
+          interval: 'weekly'
+      open-pull-requests-limit: 5
+      commit-message:
+          prefix: 'npm'
+      labels:
+          - 'dependencies'
+          - 'frontend'
