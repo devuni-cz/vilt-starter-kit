@@ -50,7 +50,7 @@
 | Feature     | Version | Description                               |
 | ----------- | ------- | ----------------------------------------- |
 | **Laravel** | `12.x`  | Modern PHP framework with latest features |
-| **PHP**     | `8.4+`  | Latest PHP with performance improvements  |
+| **PHP**     | `8.5+`  | Latest PHP with performance improvements  |
 | **Sentry**  | `4.x`   | Error tracking and performance monitoring |
 
 ### Development Tools
