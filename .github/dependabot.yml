@@ -4,21 +4,23 @@ updates:
     - package-ecosystem: 'composer'
       directory: '/'
       schedule:
-          interval: 'weekly'
-      open-pull-requests-limit: 5
+            interval: 'weekly'
+            day: 'monday'
+      open-pull-requests-limit: 10
       commit-message:
-          prefix: 'composer'
+            prefix: 'composer'
       labels:
-          - 'dependencies'
-          - 'php'
+            - 'dependencies'
+            - 'php'
 
     - package-ecosystem: 'npm'
       directory: '/'
       schedule:
-          interval: 'weekly'
+            interval: 'weekly'
+            day: 'monday'
       open-pull-requests-limit: 5
       commit-message:
-          prefix: 'npm'
+            prefix: 'npm'
       labels:
-          - 'dependencies'
-          - 'frontend'
+            - 'dependencies'
+            - 'frontend'
