@@ -9,13 +9,15 @@ The Laravel Boost guidelines are specifically curated by Laravel maintainers for
 
 This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
 
-- php - 8.4.16
+- php - 8.5.1
 - inertiajs/inertia-laravel (INERTIA) - v2
 - laravel/framework (LARAVEL) - v12
 - laravel/prompts (PROMPTS) - v0
 - laravel/wayfinder (WAYFINDER) - v0
 - larastan/larastan (LARASTAN) - v3
+- laravel/boost (BOOST) - v2
 - laravel/mcp (MCP) - v0
+- laravel/pail (PAIL) - v1
 - laravel/pint (PINT) - v1
 - pestphp/pest (PEST) - v4
 - phpunit/phpunit (PHPUNIT) - v12
@@ -23,7 +25,7 @@ This application is a Laravel application and its main Laravel ecosystems packag
 - @inertiajs/vue3 (INERTIA) - v2
 - vue (VUE) - v3
 - @laravel/vite-plugin-wayfinder (WAYFINDER) - v0
-- eslint (ESLINT) - v9
+- eslint (ESLINT) - v10
 - prettier (PRETTIER) - v3
 - tailwindcss (TAILWINDCSS) - v4
 
@@ -81,6 +83,7 @@ This project has domain-specific skills available. You MUST activate the relevan
 
 - You should use the `tinker` tool when you need to execute PHP to debug code or query Eloquent models directly.
 - Use the `database-query` tool when you only need to read from the database.
+- Use the `database-schema` tool to inspect table structure before writing migrations or models.
 
 ## Reading Browser Logs With the `browser-logs` Tool
 
@@ -111,7 +114,7 @@ This project has domain-specific skills available. You MUST activate the relevan
 ## Constructors
 
 - Use PHP 8 constructor property promotion in `__construct()`.
-    - <code-snippet>public function __construct(public GitHub $github) { }</code-snippet>
+    - `public function __construct(public GitHub $github) { }`
 - Do not allow empty `__construct()` methods with zero parameters unless the constructor is private.
 
 ## Type Declarations
@@ -119,12 +122,13 @@ This project has domain-specific skills available. You MUST activate the relevan
 - Always use explicit return type declarations for methods and functions.
 - Use appropriate PHP type hints for method parameters.
 
-<code-snippet name="Explicit Return Types and Method Params" lang="php">
+<!-- Explicit Return Types and Method Params -->
+```php
 protected function isAccessible(User $user, ?string $path = null): bool
 {
     ...
 }
-</code-snippet>
+```
 
 ## Enums
 
@@ -150,7 +154,7 @@ protected function isAccessible(User $user, ?string $path = null): bool
 # Inertia
 
 - Inertia creates fully client-side rendered SPAs without modern SPA complexity, leveraging existing server-side patterns.
-- Components live in `resources/js/Pages` (unless specified in `vite.config.js`). Use `Inertia::render()` for server-side routing instead of Blade views.
+- Components live in `resources/js/pages` (unless specified in `vite.config.js`). Use `Inertia::render()` for server-side routing instead of Blade views.
 - ALWAYS use `search-docs` tool for version-specific Inertia documentation and updated code examples.
 - IMPORTANT: Activate `inertia-vue-development` when working with Inertia Vue client-side patterns.
 
@@ -258,8 +262,8 @@ Wayfinder generates TypeScript functions for Laravel routes. Import from `@/acti
 
 # Laravel Pint Code Formatter
 
-- You must run `vendor/bin/pint --dirty` before finalizing changes to ensure your code matches the project's expected style.
-- Do not run `vendor/bin/pint --test`, simply run `vendor/bin/pint` to fix any formatting issues.
+- You must run `vendor/bin/pint --dirty --format agent` before finalizing changes to ensure your code matches the project's expected style.
+- Do not run `vendor/bin/pint --test --format agent`, simply run `vendor/bin/pint --format agent` to fix any formatting issues.
 
 === pest/core rules ===
 
@@ -285,4 +289,5 @@ Vue components must have a single root element.
 - Always use existing Tailwind conventions; check project patterns before adding new ones.
 - IMPORTANT: Always use `search-docs` tool for version-specific Tailwind CSS documentation and updated code examples. Never rely on training data.
 - IMPORTANT: Activate `tailwindcss-development` every time you're working with a Tailwind CSS or styling-related task.
+
 </laravel-boost-guidelines>
