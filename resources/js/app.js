@@ -15,7 +15,7 @@ createInertiaApp(
         resolve: async (name) => {
             const page = await resolvePageComponent(`./pages/${name}.vue`, import.meta.glob('./pages/**/*.vue'))
 
-            page.default.layout = name.startsWith('Auth/') ? null : AppLayout
+            page.default.layout = name.startsWith('Auth/') || name === 'Error' ? null : AppLayout
 
             return page
         },
