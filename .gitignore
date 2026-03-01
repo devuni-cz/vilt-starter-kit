@@ -25,8 +25,6 @@ yarn-error.log*.log
 Homestead.json
 Homestead.yaml
 Thumbs.db
-package-lock.json
-composer.lock
 
 # Sentry Config File
 .env.sentry-build-plugin
