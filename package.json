@@ -27,7 +27,7 @@
         "globals": "^17.4.0",
         "husky": "^9.1.7",
         "laravel-vite-plugin": "^2.1.0",
-        "lint-staged": "^16.3.1",
+        "lint-staged": "^16.3.3",
         "prettier": "^3.8.1",
         "prettier-plugin-organize-attributes": "^1.0.0",
         "prettier-plugin-organize-imports": "^4.3.0",
