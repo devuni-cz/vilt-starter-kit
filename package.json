@@ -41,7 +41,7 @@
         "@inertiajs/vue3": "^2.3.17",
         "@sentry/tracing": "^7.120.4",
         "@sentry/vite-plugin": "^5.1.1",
-        "@sentry/vue": "^10.41.0",
+        "@sentry/vue": "^10.42.0",
         "@vue/server-renderer": "^3.5.29",
         "vue": "^3.5.29"
     },
