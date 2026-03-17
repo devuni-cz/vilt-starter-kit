@@ -17,8 +17,8 @@
     "require": {
         "php": "^8.5",
         "inertiajs/inertia-laravel": "^2.0.22",
-        "laravel/framework": "^12.54.1",
-        "laravel/tinker": "^2.11.1",
+        "laravel/framework": "^13.0.0",
+        "laravel/tinker": "^3.0.0",
         "laravel/wayfinder": "^0.1.14",
         "sentry/sentry-laravel": "^4.22.0"
     },
@@ -27,7 +27,7 @@
         "driftingly/rector-laravel": "^2.1.12",
         "fakerphp/faker": "^1.24.1",
         "larastan/larastan": "^3.9.3",
-        "laravel/boost": "^2.3.1",
+        "laravel/boost": "^2.3.4",
         "laravel/pail": "^1.2.6",
         "laravel/pint": "^1.29.0",
         "mockery/mockery": "^1.6.12",
