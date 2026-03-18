@@ -19,7 +19,7 @@ const contentData = {
     laravel: [
         {
             id: 'laravel',
-            text: 'laravel 12.x',
+            text: 'laravel 13.x',
             href: 'https://laravel.com/',
         },
         {
