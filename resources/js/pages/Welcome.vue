@@ -109,7 +109,7 @@ const contentData = {
         },
         {
             id: 'vite',
-            text: 'vite 7.x',
+            text: 'vite 8.x',
             href: 'https://github.com/vitejs/vite',
         },
         {
