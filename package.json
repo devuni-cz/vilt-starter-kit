@@ -21,19 +21,19 @@
         "@vitejs/plugin-vue": "^6.0.5",
         "axios": "^1.13.6",
         "concurrently": "^9.2.1",
-        "eslint": "^10.0.3",
+        "eslint": "^10.1.0",
         "eslint-plugin-unused-imports": "^4.4.1",
         "eslint-plugin-vue": "^10.8.0",
         "globals": "^17.4.0",
         "husky": "^9.1.7",
-        "laravel-vite-plugin": "^2.1.0",
+        "laravel-vite-plugin": "^3.0.0",
         "lint-staged": "^16.4.0",
         "prettier": "^3.8.1",
         "prettier-plugin-organize-attributes": "^1.0.0",
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.2",
-        "tailwindcss": "^4.2.1",
-        "vite": "^7.3.1",
+        "tailwindcss": "^4.2.2",
+        "vite": "^8.0.2",
         "vue-eslint-parser": "^10.4.0"
     },
     "dependencies": {
@@ -41,13 +41,13 @@
         "@inertiajs/vue3": "^2.3.18",
         "@sentry/tracing": "^7.120.4",
         "@sentry/vite-plugin": "^5.1.1",
-        "@sentry/vue": "^10.43.0",
+        "@sentry/vue": "^10.45.0",
         "@vue/server-renderer": "^3.5.30",
         "vue": "^3.5.30"
     },
     "optionalDependencies": {
-        "@rollup/rollup-linux-x64-gnu": "4.59.0",
-        "@tailwindcss/oxide-linux-x64-gnu": "^4.2.1",
+        "@rollup/rollup-linux-x64-gnu": "4.60.0",
+        "@tailwindcss/oxide-linux-x64-gnu": "^4.2.2",
         "lightningcss-linux-x64-gnu": "^1.32.0"
     },
     "lint-staged": {
