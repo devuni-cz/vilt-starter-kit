@@ -185,7 +185,7 @@ const getContentForOption = (option) => {
             </section>
 
             <section
-                class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg px-2 lg:h-[60vh] lg:max-w-4xl lg:flex-row"
+                class="flex w-full max-w-[335px] flex-col overflow-hidden rounded-lg px-2 pb-10 lg:h-[60vh] lg:max-w-4xl lg:flex-row lg:pb-0"
             >
                 <div
                     class="flex-1 rounded-t-lg bg-white p-6 shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] md:pb-12 lg:rounded-t-none lg:rounded-l-lg lg:p-16 lg:shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)]"
@@ -237,7 +237,7 @@ const getContentForOption = (option) => {
                 </div>
 
                 <div
-                    class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden bg-gradient-to-br from-sky-100 to-purple-100 backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg"
+                    class="relative -mb-px aspect-335/376 w-full shrink-0 overflow-hidden rounded-b-lg bg-gradient-to-br from-sky-100 to-purple-100 backdrop-blur lg:mb-0 lg:-ml-px lg:aspect-auto lg:w-[438px] lg:rounded-t-none lg:rounded-r-lg lg:rounded-bl-none"
                 >
                     <div class="absolute inset-0 z-10 flex items-center justify-center p-6 text-center">
                         <ul class="flex flex-col items-center gap-3 text-sm text-gray-400">

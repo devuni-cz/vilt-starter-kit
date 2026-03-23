@@ -53,15 +53,20 @@ export default defineConfig(({ command, mode, isSsrBuild }) => ({
                 ...(isSsrBuild
                     ? {}
                     : {
-                          manualChunks: {
-                              // Vue core and related packages
-                              vue: ['vue', '@inertiajs/vue3', '@vue/server-renderer'],
-
-                              // Laravel/Inertia specific
-                              laravel: ['axios'],
-
-                              // Monitoring and error tracking
-                              sentry: ['@sentry/vue', '@sentry/tracing'],
+                          manualChunks: (id) => {
+                              if (
+                                  id.includes('vue') ||
+                                  id.includes('@inertiajs/vue3') ||
+                                  id.includes('@vue/server-renderer')
+                              ) {
+                                  return 'vue'
+                              }
+                              if (id.includes('axios')) {
+                                  return 'laravel'
+                              }
+                              if (id.includes('@sentry/vue') || id.includes('@sentry/tracing')) {
+                                  return 'sentry'
+                              }
                           },
                       }),
             },
