@@ -8,12 +8,13 @@ const appName = import.meta.env.VITE_APP_NAME || 'Vilt starter kit | Devuni'
 
 createInertiaApp({
     title: (title) => (title ? `${title} - ${appName}` : appName),
-    resolve: (name) => {
-        const page = import.meta.glob('./pages/**/*.vue', { eager: true })[`./pages/${name}.vue`]
-
-        page.default.layout = name.startsWith('Auth/') || name === 'Error' ? null : AppLayout
-
-        return page
+    layout: (name) => {
+        switch (true) {
+            case name === 'Error':
+                return null
+            default:
+                return AppLayout
+        }
     },
     withApp(app, { ssr }) {
         app.component('Head', Head).component('Link', Link)
