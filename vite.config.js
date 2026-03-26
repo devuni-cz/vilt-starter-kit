@@ -18,7 +18,7 @@ export default defineConfig(({ command, mode, isSsrBuild }) => {
         },
         plugins: [
             laravel({
-                input: 'resources/js/app.js',
+                input: ['resources/js/app.js', 'resources/css/app.css'],
                 refresh: true,
             }),
             inertia({
