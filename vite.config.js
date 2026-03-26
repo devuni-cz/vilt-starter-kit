@@ -1,3 +1,4 @@
+import inertia from '@inertiajs/vite'
 import { wayfinder } from '@laravel/vite-plugin-wayfinder'
 import { sentryVitePlugin } from '@sentry/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
@@ -13,14 +14,16 @@ export default defineConfig(({ command, mode, isSsrBuild }) => ({
         },
     },
     plugins: [
-        wayfinder({
-            formVariants: true,
-        }),
-        tailwindcss(),
         laravel({
             input: 'resources/js/app.js',
-            ssr: 'resources/js/ssr.js',
             refresh: true,
+        }),
+        inertia({
+            ssr: {
+                // entry: 'resources/js/ssr.js',
+                port: parseInt(process.env.VITE_INERTIA_SSR_PORT) || 13701,
+                cluster: true,
+            },
         }),
         vue({
             template: {
@@ -30,6 +33,10 @@ export default defineConfig(({ command, mode, isSsrBuild }) => ({
                 },
             },
         }),
+        wayfinder({
+            formVariants: true,
+        }),
+        tailwindcss(),
         sentryVitePlugin({
             org: 'devuni',
             project: 'template-cz',
@@ -60,9 +67,6 @@ export default defineConfig(({ command, mode, isSsrBuild }) => ({
                                   id.includes('@vue/server-renderer')
                               ) {
                                   return 'vue'
-                              }
-                              if (id.includes('axios')) {
-                                  return 'laravel'
                               }
                               if (id.includes('@sentry/vue') || id.includes('@sentry/tracing')) {
                                   return 'sentry'

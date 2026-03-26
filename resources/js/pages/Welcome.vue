@@ -47,7 +47,7 @@ const contentData = {
     inertia: [
         {
             id: 'inertia',
-            text: 'Inertia 2.x',
+            text: 'Inertia 3.x',
             href: 'https://inertiajs.com/',
         },
         {

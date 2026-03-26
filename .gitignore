@@ -36,3 +36,4 @@ sitemap.xml
 /resources/js/actions
 /resources/js/routes
 /resources/js/wayfinder
+/.claude/settings.local.json
