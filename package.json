@@ -37,11 +37,11 @@
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "@inertiajs/vite": "^3.0.0",
-        "@inertiajs/vue3": "^3.0.0",
+        "@inertiajs/vite": "^3.0.1",
+        "@inertiajs/vue3": "^3.0.1",
         "@sentry/tracing": "^7.120.4",
         "@sentry/vite-plugin": "^5.1.1",
-        "@sentry/vue": "^10.46.0",
+        "@sentry/vue": "^10.47.0",
         "@vue/server-renderer": "^3.5.31",
         "vue": "^3.5.31"
     },

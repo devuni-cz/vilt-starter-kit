@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62c02e9285c1f381cd9ee2135ac8dbdf",
+    "content-hash": "c71082267758fc548ae274ce54ced2dc",
     "packages": [
         {
             "name": "brick/math",
@@ -3620,16 +3620,16 @@
         },
         {
             "name": "sentry/sentry",
-            "version": "4.23.0",
+            "version": "4.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getsentry/sentry-php.git",
-                "reference": "121a674d5fffcdb8e414b75c1b76edba8e592b66"
+                "reference": "eccf30d8abcf55189a1dc0eb3d946a61d42fb4df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/121a674d5fffcdb8e414b75c1b76edba8e592b66",
-                "reference": "121a674d5fffcdb8e414b75c1b76edba8e592b66",
+                "url": "https://api.github.com/repos/getsentry/sentry-php/zipball/eccf30d8abcf55189a1dc0eb3d946a61d42fb4df",
+                "reference": "eccf30d8abcf55189a1dc0eb3d946a61d42fb4df",
                 "shasum": ""
             },
             "require": {
@@ -3697,7 +3697,7 @@
             ],
             "support": {
                 "issues": "https://github.com/getsentry/sentry-php/issues",
-                "source": "https://github.com/getsentry/sentry-php/tree/4.23.0"
+                "source": "https://github.com/getsentry/sentry-php/tree/4.23.1"
             },
             "funding": [
                 {
@@ -3709,7 +3709,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-03-23T13:15:52+00:00"
+            "time": "2026-03-27T18:26:46+00:00"
         },
         {
             "name": "sentry/sentry-laravel",
@@ -10402,11 +10402,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.44",
+            "version": "2.1.45",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/4a88c083c668b2c364a425c9b3171b2d9ea5d218",
-                "reference": "4a88c083c668b2c364a425c9b3171b2d9ea5d218",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/f8cdfd9421b7edb7686a2d150a234870464eac70",
+                "reference": "f8cdfd9421b7edb7686a2d150a234870464eac70",
                 "shasum": ""
             },
             "require": {
@@ -10451,7 +10451,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-25T17:34:21+00:00"
+            "time": "2026-03-30T13:22:02+00:00"
         },
         {
             "name": "phpstan/phpstan-strict-rules",
@@ -12350,5 +12350,5 @@
         "php": "^8.4"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
