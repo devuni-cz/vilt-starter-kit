@@ -25,7 +25,7 @@
         "eslint-plugin-vue": "^10.8.0",
         "globals": "^17.4.0",
         "husky": "^9.1.7",
-        "laravel-vite-plugin": "^3.0.0",
+        "laravel-vite-plugin": "^3.0.1",
         "lint-staged": "^16.4.0",
         "prettier": "^3.8.1",
         "prettier-plugin-organize-attributes": "^1.0.0",
@@ -37,13 +37,13 @@
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "@inertiajs/vite": "^3.0.1",
-        "@inertiajs/vue3": "^3.0.1",
+        "@inertiajs/vite": "^3.0.2",
+        "@inertiajs/vue3": "^3.0.2",
         "@sentry/tracing": "^7.120.4",
         "@sentry/vite-plugin": "^5.1.1",
         "@sentry/vue": "^10.47.0",
-        "@vue/server-renderer": "^3.5.31",
-        "vue": "^3.5.31"
+        "@vue/server-renderer": "^3.5.32",
+        "vue": "^3.5.32"
     },
     "optionalDependencies": {
         "@rollup/rollup-linux-x64-gnu": "4.60.1",

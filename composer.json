@@ -17,13 +17,13 @@
     "require": {
         "php": "^8.4",
         "inertiajs/inertia-laravel": "3.0.1",
-        "laravel/framework": "^13.2.0",
+        "laravel/framework": "^13.3.0",
         "laravel/tinker": "^3.0.0",
         "laravel/wayfinder": "^0.1.15",
         "sentry/sentry-laravel": "^4.24.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^4.2.1",
+        "barryvdh/laravel-debugbar": "^4.2.3",
         "driftingly/rector-laravel": "^2.2.0",
         "fakerphp/faker": "^1.24.1",
         "larastan/larastan": "^3.9.3",
@@ -31,8 +31,8 @@
         "laravel/pail": "^1.2.6",
         "laravel/pint": "^1.29.0",
         "mockery/mockery": "^1.6.12",
-        "nunomaduro/collision": "^8.9.1",
-        "pestphp/pest": "^4.4.3",
+        "nunomaduro/collision": "^8.9.2",
+        "pestphp/pest": "^4.4.5",
         "pestphp/pest-plugin-browser": "^4.3.0",
         "pestphp/pest-plugin-laravel": "^4.1.0",
         "pestphp/pest-plugin-type-coverage": "^4.0.3",
