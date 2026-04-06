@@ -6,12 +6,16 @@
     "guidelines": true,
     "mcp": true,
     "nightwatch_mcp": false,
+    "packages": [
+        "barryvdh/laravel-debugbar"
+    ],
     "sail": false,
     "skills": [
         "laravel-best-practices",
         "wayfinder-development",
         "pest-testing",
         "inertia-vue-development",
-        "tailwindcss-development"
+        "tailwindcss-development",
+        "debug-using-debugbar"
     ]
 }
