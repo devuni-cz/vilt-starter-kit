@@ -32,13 +32,13 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.2",
         "tailwindcss": "^4.2.2",
-        "vite": "^8.0.5",
+        "vite": "^8.0.7",
         "vue-eslint-parser": "^10.4.0"
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "@inertiajs/vite": "^3.0.2",
-        "@inertiajs/vue3": "^3.0.2",
+        "@inertiajs/vite": "^3.0.3",
+        "@inertiajs/vue3": "^3.0.3",
         "@sentry/tracing": "^7.120.4",
         "@sentry/vite-plugin": "^5.1.1",
         "@sentry/vue": "^10.47.0",

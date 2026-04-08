@@ -16,11 +16,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.5",
-        "inertiajs/inertia-laravel": "3.0.1",
-        "laravel/framework": "^13.3.0",
+        "inertiajs/inertia-laravel": "3.0.2",
+        "laravel/framework": "^13.4.0",
         "laravel/tinker": "^3.0.0",
-        "laravel/wayfinder": "^0.1.15",
-        "sentry/sentry-laravel": "^4.24.0"
+        "laravel/wayfinder": "^0.1.16",
+        "sentry/sentry-laravel": "^4.25.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^4.2.4",
