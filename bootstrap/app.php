@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-use App\Http\Middleware\HandleInertiaRequests;
+use App\Http\Middleware\AddContentSecurityPolicyHeadersMiddleware;
+use App\Http\Middleware\HandleInertiaRequests as HandleInertiaRequestsMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets as AddLinkHeadersForPreloadedAssetsMiddleware;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -19,8 +20,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->web(append: [
-            HandleInertiaRequests::class,
-            AddLinkHeadersForPreloadedAssets::class,
+            // AddContentSecurityPolicyHeadersMiddleware::class,
+            HandleInertiaRequestsMiddleware::class,
+            AddLinkHeadersForPreloadedAssetsMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
