@@ -36,7 +36,7 @@ final class AppServiceProvider extends ServiceProvider
         }
         if (app()->isProduction()) {
             URL::forceScheme('https');
-            DB::prohibitDestructiveCommands();
+            // DB::prohibitDestructiveCommands();
         }
     }
 }
