@@ -32,7 +32,7 @@
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.2",
         "tailwindcss": "^4.2.2",
-        "vite": "^8.0.8",
+        "vite": "^8.0.9",
         "vue-eslint-parser": "^10.4.0"
     },
     "dependencies": {
