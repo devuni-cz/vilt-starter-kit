@@ -46,7 +46,7 @@
         "vue": "^3.5.32"
     },
     "optionalDependencies": {
-        "@rollup/rollup-linux-x64-gnu": "4.60.1",
+        "@rollup/rollup-linux-x64-gnu": "4.60.2",
         "@rollup/rollup-win32-x64-msvc": "4.60.1",
         "@tailwindcss/oxide-linux-x64-gnu": "^4.2.2",
         "@tailwindcss/oxide-win32-x64-msvc": "^4.2.2",
