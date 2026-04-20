@@ -49,7 +49,7 @@
         "@rollup/rollup-linux-x64-gnu": "4.60.2",
         "@rollup/rollup-win32-x64-msvc": "4.60.1",
         "@tailwindcss/oxide-linux-x64-gnu": "^4.2.2",
-        "@tailwindcss/oxide-win32-x64-msvc": "^4.2.2",
+        "@tailwindcss/oxide-win32-x64-msvc": "^4.2.3",
         "lightningcss-linux-x64-gnu": "^1.32.0",
         "lightningcss-win32-x64-msvc": "^1.32.0"
     },
