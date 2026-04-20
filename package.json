@@ -31,7 +31,7 @@
         "prettier-plugin-organize-attributes": "^1.0.0",
         "prettier-plugin-organize-imports": "^4.3.0",
         "prettier-plugin-tailwindcss": "^0.7.2",
-        "tailwindcss": "^4.2.2",
+        "tailwindcss": "^4.2.3",
         "vite": "^8.0.9",
         "vue-eslint-parser": "^10.4.0"
     },
