@@ -1,9 +1,9 @@
 ---
 name: pest-testing
-description: "Use this skill for Pest PHP testing in Laravel projects only. Trigger whenever any test is being written, edited, fixed, or refactored — including fixing tests that broke after a code change, adding assertions, converting PHPUnit to Pest, adding datasets, and TDD workflows. Always activate when the user asks how to write something in Pest, mentions test files or directories (tests/Feature, tests/Unit, tests/Browser), or needs browser testing, smoke testing multiple pages for JS errors, or architecture tests. Covers: test()/it()/expect() syntax, datasets, mocking, browser testing (visit/click/fill), smoke testing, arch(), Livewire component tests, RefreshDatabase, and all Pest 4 features. Do not use for factories, seeders, migrations, controllers, models, or non-test PHP code."
+description: 'Use this skill for Pest PHP testing in Laravel projects only. Trigger whenever any test is being written, edited, fixed, or refactored — including fixing tests that broke after a code change, adding assertions, converting PHPUnit to Pest, adding datasets, and TDD workflows. Always activate when the user asks how to write something in Pest, mentions test files or directories (tests/Feature, tests/Unit, tests/Browser), or needs browser testing, smoke testing multiple pages for JS errors, or architecture tests. Covers: test()/it()/expect() syntax, datasets, mocking, browser testing (visit/click/fill), smoke testing, arch(), Livewire component tests, RefreshDatabase, and all Pest 4 features. Do not use for factories, seeders, migrations, controllers, models, or non-test PHP code.'
 license: MIT
 metadata:
-  author: laravel
+    author: laravel
 ---
 
 # Pest Testing 4
@@ -29,6 +29,7 @@ All tests must be written using Pest. Use `php artisan make:test --pest {name}`.
 Pest supports both `test()` and `it()` functions. Before writing new tests, check existing test files in the same directory to match the project's convention. Use `test()` if existing tests use `test()`, or `it()` if they use `it()`.
 
 <!-- Basic Pest Test Example -->
+
 ```php
 it('is true', function () {
     expect(true)->toBeTrue();
@@ -46,17 +47,18 @@ it('is true', function () {
 Use specific assertions (`assertSuccessful()`, `assertNotFound()`) instead of `assertStatus()`:
 
 <!-- Pest Response Assertion -->
+
 ```php
 it('returns all', function () {
     $this->postJson('/api/docs', [])->assertSuccessful();
 });
 ```
 
-| Use | Instead of |
-|-----|------------|
+| Use                  | Instead of          |
+| -------------------- | ------------------- |
 | `assertSuccessful()` | `assertStatus(200)` |
-| `assertNotFound()` | `assertStatus(404)` |
-| `assertForbidden()` | `assertStatus(403)` |
+| `assertNotFound()`   | `assertStatus(404)` |
+| `assertForbidden()`  | `assertStatus(403)` |
 
 ## Mocking
 
@@ -67,6 +69,7 @@ Import mock function before use: `use function Pest\Laravel\mock;`
 Use datasets for repetitive tests (validation rules, etc.):
 
 <!-- Pest Dataset Example -->
+
 ```php
 it('has emails', function (string $email) {
     expect($email)->not->toBeEmpty();
@@ -78,13 +81,13 @@ it('has emails', function (string $email) {
 
 ## Pest 4 Features
 
-| Feature | Purpose |
-|---------|---------|
-| Browser Testing | Full integration tests in real browsers |
-| Smoke Testing | Validate multiple pages quickly |
-| Visual Regression | Compare screenshots for visual changes |
-| Test Sharding | Parallel CI runs |
-| Architecture Testing | Enforce code conventions |
+| Feature              | Purpose                                 |
+| -------------------- | --------------------------------------- |
+| Browser Testing      | Full integration tests in real browsers |
+| Smoke Testing        | Validate multiple pages quickly         |
+| Visual Regression    | Compare screenshots for visual changes  |
+| Test Sharding        | Parallel CI runs                        |
+| Architecture Testing | Enforce code conventions                |
 
 ### Browser Test Example
 
@@ -100,6 +103,7 @@ Browser tests run in real browsers for full integration testing:
 - Take screenshots or pause tests for debugging.
 
 <!-- Pest Browser Test Example -->
+
 ```php
 it('may reset the password', function () {
     Notification::fake();
@@ -124,6 +128,7 @@ it('may reset the password', function () {
 Quickly validate multiple pages have no JavaScript errors:
 
 <!-- Pest Smoke Testing Example -->
+
 ```php
 $pages = visit(['/', '/about', '/contact']);
 
@@ -143,6 +148,7 @@ Split tests across parallel processes for faster CI runs.
 Pest 4 includes architecture testing (from Pest 3):
 
 <!-- Architecture Test Example -->
+
 ```php
 arch('controllers')
     ->expect('App\Http\Controllers')

@@ -1,32 +1,32 @@
 ---
 name: debug-using-debugbar
 description: >
-  Use this skill to optimize requests or debug Laravel application issues — slow pages, N+1 queries, exceptions,
-  failed requests, or unexpected behavior — by inspecting data captured by Laravel Debugbar via
-  Artisan CLI commands. Use when the user asks to investigate a bug, diagnose a slow request,
-  find duplicate queries, check what happened on a previous request, or optimize database
-  performance, even if they don't explicitly mention "debugbar" or "profiling."
+    Use this skill to optimize requests or debug Laravel application issues — slow pages, N+1 queries, exceptions,
+    failed requests, or unexpected behavior — by inspecting data captured by Laravel Debugbar via
+    Artisan CLI commands. Use when the user asks to investigate a bug, diagnose a slow request,
+    find duplicate queries, check what happened on a previous request, or optimize database
+    performance, even if they don't explicitly mention "debugbar" or "profiling."
 compatibility: Requires Laravel with fruitcake/laravel-debugbar installed and debug mode enabled.
 ---
 
 ## Debugging and optimizing workflow
 
 1. Find the relevant request:
-   ```bash
-   php artisan debugbar:find --issues --max=50
-   ```
+    ```bash
+    php artisan debugbar:find --issues --max=50
+    ```
 2. Inspect the request summary to identify which collectors have data:
-   ```bash
-   php artisan debugbar:get {id}
-   ```
+    ```bash
+    php artisan debugbar:get {id}
+    ```
 3. Drill into the relevant collector based on the issue type:
-   ```bash
-   php artisan debugbar:get {id} --collector=exceptions
-   ```
+    ```bash
+    php artisan debugbar:get {id} --collector=exceptions
+    ```
 4. For query issues, use dedicated query analysis:
-   ```bash
-   php artisan debugbar:queries {id}
-   ```
+    ```bash
+    php artisan debugbar:queries {id}
+    ```
 5. Trace the problem to source code using backtraces, then fix and re-test.
 
 ## Finding requests
@@ -71,6 +71,7 @@ php artisan debugbar:get {id} --collector=exceptions
 ```
 
 Pick the collector by issue type:
+
 - **Error/500** → `exceptions` · **Slow page** → `queries`, `time` · **Auth** → `auth`, `gate` · **Cache** → `cache`
 
 ## Analyzing queries

@@ -70,7 +70,7 @@ export default defineConfig(({ command, mode, isSsrBuild }) => {
                                   ) {
                                       return 'vue'
                                   }
-                                  if (id.includes('@sentry/vue') || id.includes('@sentry/tracing')) {
+                                  if (id.includes('@sentry/vue')) {
                                       return 'sentry'
                                   }
                               },

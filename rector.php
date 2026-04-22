@@ -2,19 +2,21 @@
 
 declare(strict_types=1);
 
-use Rector\Config\RectorConfig;
+use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\CodingStyle\Rector\Enum_\EnumCaseToPascalCaseRector;
-use RectorLaravel\Rector\StaticCall\EloquentMagicMethodToQueryBuilderRector;
+use Rector\Config\RectorConfig;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
+use RectorLaravel\Rector\FuncCall\AppToResolveRector;
+use RectorLaravel\Rector\StaticCall\EloquentMagicMethodToQueryBuilderRector;
+use RectorLaravel\Set\LaravelSetList;
 
 return RectorConfig::configure()
     ->withPaths([
         __DIR__.'/app',
         __DIR__.'/bootstrap/app.php',
-        __DIR__.'/database',
-        __DIR__.'/public',
-        __DIR__.'/routes',
         __DIR__.'/config',
+        __DIR__.'/database',
+        __DIR__.'/routes',
         __DIR__.'/tests',
     ])
     ->withSkip([
@@ -22,6 +24,8 @@ return RectorConfig::configure()
         __DIR__.'/storage',
         __DIR__.'/vendor',
         AddOverrideAttributeToOverriddenMethodsRector::class,
+        EncapsedStringsToSprintfRector::class,
+        AppToResolveRector::class,
     ])
     ->withPreparedSets(
         deadCode: true,
@@ -30,9 +34,18 @@ return RectorConfig::configure()
         typeDeclarations: true,
         privatization: true,
         earlyReturn: true,
+        instanceOf: true,
+        rectorPreset: true,
+        carbon: true,
     )
     ->withRules([
         EnumCaseToPascalCaseRector::class,
+    ])
+    ->withSets([
+        LaravelSetList::LARAVEL_CODE_QUALITY,
+        LaravelSetList::LARAVEL_COLLECTION,
+        LaravelSetList::LARAVEL_IF_HELPERS,
+        LaravelSetList::LARAVEL_ARRAYACCESS_TO_METHOD_CALL,
     ])
     ->withConfiguredRule(EloquentMagicMethodToQueryBuilderRector::class, [
         'exclude_methods' => [

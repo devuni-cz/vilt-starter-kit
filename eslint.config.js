@@ -1,4 +1,5 @@
 import js from '@eslint/js'
+import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
 import pluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
@@ -19,6 +20,7 @@ export default [
         },
         plugins: {
             'unused-imports': pluginUnusedImports,
+            'simple-import-sort': pluginSimpleImportSort,
         },
         rules: {
             'unused-imports/no-unused-imports': 'error',
@@ -31,6 +33,8 @@ export default [
                     argsIgnorePattern: '^_',
                 },
             ],
+            'simple-import-sort/imports': 'error',
+            'simple-import-sort/exports': 'error',
         },
     },
 
@@ -52,6 +56,7 @@ export default [
         plugins: {
             vue: pluginVue,
             'unused-imports': pluginUnusedImports,
+            'simple-import-sort': pluginSimpleImportSort,
         },
         rules: {
             // Vue essential rules
@@ -89,7 +94,7 @@ export default [
             // Override Vue rules
             'vue/multi-word-component-names': 'off',
 
-            // Enforce PascalCase for component names in templates (e.g., NuxtLink instead of nuxt-link)
+            // Enforce PascalCase for component names in templates
             'vue/component-name-in-template-casing': [
                 'error',
                 'PascalCase',
@@ -115,6 +120,28 @@ export default [
                     varsIgnorePattern: '^_',
                     args: 'after-used',
                     argsIgnorePattern: '^_',
+                },
+            ],
+
+            // Import sorting for Vue files
+            'simple-import-sort/exports': 'error',
+            'simple-import-sort/imports': [
+                'error',
+                {
+                    groups: [
+                        // Side effect imports (like polyfills, CSS)
+                        ['^\\u0000'],
+                        // Vue + framework
+                        ['^vue', '^@vue', '^@inertiajs'],
+                        // External packages
+                        ['^@?\\w'],
+                        // Internal aliases (like @/components)
+                        ['^@/'],
+                        // Relative imports (parent + sibling)
+                        ['^\\.\\.(?!/?$)', '^\\.\\./?$', '^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+                        // Style imports
+                        ['^.+\\.s?css$'],
+                    ],
                 },
             ],
         },

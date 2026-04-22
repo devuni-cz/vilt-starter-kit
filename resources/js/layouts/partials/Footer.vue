@@ -1,6 +1,7 @@
 <script setup>
-import { GlobeAltIcon, CameraIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { ref } from 'vue'
+
+import { CameraIcon, GlobeAltIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 const show_logo = ref(false)
 </script>
@@ -16,17 +17,17 @@ const show_logo = ref(false)
                     v-on:mouseleave="show_logo = false"
                 >
                     <div
-                        @click="show_logo = true"
-                        v-on:mouseover="show_logo = true"
                         class="relative overflow-hidden rounded-full p-2"
+                        v-on:mouseover="show_logo = true"
+                        @click="show_logo = true"
                     >
                         <a
+                            class="absolute inset-0 hidden rounded-full lg:block"
                             href="https://devuni.cz/"
                             target="_blank"
                             rel="noopener external"
                             title="Web developers - Devuni"
                             aria-label="Visit Devuni website"
-                            class="absolute inset-0 hidden rounded-full lg:block"
                         />
                         <picture>
                             <source
@@ -46,8 +47,8 @@ const show_logo = ref(false)
 
                     <Transition name="fade">
                         <div
-                            v-if="show_logo"
                             class="absolute bottom-0 left-0 w-full overflow-hidden rounded-xl bg-gray-900 shadow-lg shadow-neutral-950"
+                            v-if="show_logo"
                             role="dialog"
                             aria-labelledby="developer-info"
                         >
@@ -86,8 +87,8 @@ const show_logo = ref(false)
 
                                 <div class="relative flex flex-col items-center justify-center">
                                     <h3
-                                        id="developer-info"
                                         class="text-sm text-gray-100 uppercase"
+                                        id="developer-info"
                                     >
                                         Starter Kit by
                                     </h3>
@@ -128,9 +129,9 @@ const show_logo = ref(false)
                                         aria-label="Odkazy na portfolio a sociální sítě Tomáše Ludwiga"
                                     >
                                         <a
+                                            class="group col-span-4 flex flex-col items-center"
                                             href="https://devuni.cz/"
                                             target="_blank"
-                                            class="group col-span-4 flex flex-col items-center"
                                             rel="noopener external"
                                             title="Web developers - Devuni"
                                             aria-label="Visit Devuni website"

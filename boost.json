@@ -1,14 +1,9 @@
 {
-    "agents": [
-        "claude_code",
-        "copilot"
-    ],
+    "agents": ["claude_code", "copilot"],
     "guidelines": true,
     "mcp": true,
     "nightwatch_mcp": false,
-    "packages": [
-        "barryvdh/laravel-debugbar"
-    ],
+    "packages": ["barryvdh/laravel-debugbar"],
     "sail": false,
     "skills": [
         "laravel-best-practices",

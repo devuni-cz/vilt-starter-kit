@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Override;
-use Illuminate\Support\Facades\URL;
 
 final class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +34,7 @@ final class AppServiceProvider extends ServiceProvider
         if (app()->isLocal()) {
             Model::shouldBeStrict();
         }
+
         if (app()->isProduction()) {
             URL::forceScheme('https');
             // DB::prohibitDestructiveCommands();

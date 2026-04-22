@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from 'vue'
+
 import {
     ExclamationTriangleIcon,
     HomeIcon,
@@ -6,7 +8,6 @@ import {
     MagnifyingGlassIcon,
     WrenchScrewdriverIcon,
 } from '@heroicons/vue/24/outline'
-import { computed } from 'vue'
 
 const props = defineProps({
     status: Number,
@@ -60,8 +61,8 @@ const iconColor = computed(() => {
         <div class="w-full max-w-md overflow-hidden rounded-lg bg-white px-8 py-12 text-center shadow-lg">
             <div class="mb-6 flex justify-center">
                 <component
-                    :is="iconComponent"
                     class="size-20 animate-pulse"
+                    :is="iconComponent"
                     :class="iconColor"
                 />
             </div>
@@ -79,8 +80,8 @@ const iconColor = computed(() => {
             </p>
 
             <div
-                v-if="message"
                 class="mb-8 rounded-lg bg-gray-100 p-4 text-left"
+                v-if="message"
             >
                 <p class="text-xs font-medium text-gray-500">Detail:</p>
                 <pre class="mt-1 max-h-40 overflow-auto text-sm wrap-break-word whitespace-pre-wrap text-gray-700">{{
@@ -90,8 +91,8 @@ const iconColor = computed(() => {
 
             <div class="flex flex-col gap-3 sm:flex-row sm:justify-center">
                 <Link
-                    href="/"
                     class="inline-flex items-center justify-center rounded-lg bg-green-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:outline-none"
+                    href="/"
                 >
                     <HomeIcon class="mr-2 size-4" />
                     Back to Home

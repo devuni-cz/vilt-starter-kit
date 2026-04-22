@@ -16,29 +16,37 @@
     "license": "MIT",
     "require": {
         "php": "^8.5",
+        "ext-ctype": "*",
+        "ext-filter": "*",
+        "ext-hash": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "ext-session": "*",
+        "ext-tokenizer": "*",
         "inertiajs/inertia-laravel": "3.0.6",
-        "laravel/framework": "^13.4.0",
-        "laravel/tinker": "^3.0.0",
+        "laravel/framework": "^13.6.0",
+        "laravel/tinker": "^3.0.2",
         "laravel/wayfinder": "^0.1.16",
         "sentry/sentry-laravel": "^4.25.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^4.2.6",
+        "barryvdh/laravel-debugbar": "^4.2.7",
         "driftingly/rector-laravel": "^2.3.0",
         "fakerphp/faker": "^1.24.1",
-        "larastan/larastan": "^3.9.5",
-        "laravel/boost": "^2.4.2",
+        "larastan/larastan": "^3.9.6",
+        "laravel/boost": "^2.4.4",
         "laravel/pail": "^1.2.6",
-        "laravel/pint": "^1.29.0",
+        "laravel/pint": "^1.29.1",
         "mockery/mockery": "^1.6.12",
-        "nunomaduro/collision": "^8.9.3",
-        "pestphp/pest": "^4.5.0",
+        "nunomaduro/collision": "^8.9.4",
+        "pestphp/pest": "^4.6.3",
         "pestphp/pest-plugin-browser": "^4.3.1",
         "pestphp/pest-plugin-laravel": "^4.1.0",
         "pestphp/pest-plugin-type-coverage": "^4.0.4",
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan-strict-rules": "^2.0.10",
-        "rector/rector": "^2.4.1"
+        "rector/rector": "^2.4.2"
     },
     "autoload": {
         "psr-4": {
@@ -70,9 +78,23 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"php artisan inertia:start-ssr\" --names=server,queue,logs,ssr --kill-others"
         ],
+        "pint": "pint --config=pint.json",
+        "pint:test": "pint --test --config=pint.json",
+        "analyse": "phpstan analyse --memory-limit=8G",
+        "rector": "rector process",
+        "rector:check": "rector process --dry-run",
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
+        ],
+        "test:types": "pest --type-coverage --min=100",
+        "test:unit": "pest --parallel",
+        "test:coverage": "pest --coverage --min=80",
+        "check": [
+            "@pint:test",
+            "@analyse",
+            "@rector:check",
+            "@test"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

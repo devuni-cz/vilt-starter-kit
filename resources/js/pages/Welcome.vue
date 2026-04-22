@@ -1,6 +1,7 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 import { usePage } from '@inertiajs/vue3'
+
 import { ArrowDownRightIcon } from '@heroicons/vue/24/outline'
 
 const page = usePage()
@@ -158,8 +159,8 @@ const getContentForOption = (option) => {
         <main class="flex flex-col items-center justify-center space-y-5">
             <section>
                 <div
-                    v-if="ssrEnabled"
                     class="z-50 flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1.5 text-xs font-medium text-emerald-700 shadow-sm"
+                    v-if="ssrEnabled"
                 >
                     <span class="relative flex h-2 w-2">
                         <span
@@ -171,8 +172,8 @@ const getContentForOption = (option) => {
                 </div>
 
                 <div
-                    v-else
                     class="z-50 flex items-center gap-2 rounded-full bg-yellow-100 px-3 py-1.5 text-xs font-medium text-yellow-700 shadow-sm"
+                    v-else
                 >
                     <span class="relative flex h-2 w-2">
                         <span
@@ -202,13 +203,13 @@ const getContentForOption = (option) => {
                     <ul class="mb-4 flex flex-col lg:mb-6">
                         <li
                             class="relative flex cursor-pointer items-center gap-4 py-2"
+                            v-for="option in options"
                             :class="[
                                 option.value !== options[options.length - 1].value
                                     ? 'before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:translate-y-1/2 before:border-l before:border-gray-200'
                                     : '',
                                 selectedOption === option.value ? 'font-semibold text-sky-500' : 'text-gray-400',
                             ]"
-                            v-for="option in options"
                             :key="option.value"
                             @mouseover="selectedOption = option.value"
                         >
@@ -242,13 +243,13 @@ const getContentForOption = (option) => {
                     <div class="absolute inset-0 z-10 flex items-center justify-center p-6 text-center">
                         <ul class="flex flex-col items-center gap-3 text-sm text-gray-400">
                             <li
+                                class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 starting:opacity-0"
                                 v-for="(item, index) in getContentForOption(selectedOption)"
                                 :key="selectedOption + '-' + index"
-                                class="group text-md transform items-center font-semibold opacity-100 transition-all delay-100 duration-500 starting:opacity-0"
                             >
                                 <div
-                                    v-if="item.href"
                                     class="inline-flex"
+                                    v-if="item.href"
                                 >
                                     <span
                                         class="relative right-2 hidden rounded-full bg-sky-700 p-1 opacity-0 transition-opacity duration-150 ease-linear group-hover:opacity-100 lg:block"
@@ -259,17 +260,17 @@ const getContentForOption = (option) => {
                                     </span>
 
                                     <a
+                                        class="text-black hover:underline"
+                                        v-html="item.text"
                                         :href="item.href"
                                         target="_blank"
-                                        v-html="item.text"
-                                        class="text-black hover:underline"
                                     />
                                 </div>
 
                                 <span
+                                    class=""
                                     v-else
                                     v-html="item.text"
-                                    class=""
                                 />
                             </li>
                         </ul>
@@ -279,35 +280,35 @@ const getContentForOption = (option) => {
                         class="absolute bottom-1/2 left-1/2 block -translate-x-1/2 translate-y-1/2 opacity-20 blur-[10px]"
                     >
                         <img
+                            class="size-48 object-contain"
                             v-if="selectedOption === 'laravel'"
                             src="/images/laravel.webp"
                             loading="lazy"
                             alt="Laravel"
-                            class="size-48 object-contain"
                         />
 
                         <img
+                            class="size-48 object-contain"
                             v-else-if="selectedOption === 'vue'"
                             src="/images/vuejs.webp"
                             loading="lazy"
                             alt="Vue.js"
-                            class="size-48 object-contain"
                         />
 
                         <img
+                            class="size-48 object-contain"
                             v-else-if="selectedOption === 'inertia'"
                             src="/images/inertiajs.webp"
                             loading="lazy"
                             alt="Inertia.js"
-                            class="size-48 object-contain"
                         />
 
                         <img
+                            class="size-48 object-contain"
                             v-else
                             src="/images/tailwindcss.webp"
                             loading="lazy"
                             alt="Tailwind CSS"
-                            class="size-48 object-contain"
                         />
                     </div>
 

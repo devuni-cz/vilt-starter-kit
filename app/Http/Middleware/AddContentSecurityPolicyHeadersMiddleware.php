@@ -14,15 +14,16 @@ final class AddContentSecurityPolicyHeadersMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  Closure(Request): (Response)  $next
+     * @param  Closure(Request): Response  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
         Vite::useCspNonce();
 
-        return $next($request)->withHeaders([
-            'Content-Security-Policy' => $this->buildPolicy(),
-        ]);
+        $response = $next($request);
+        $response->headers->set('Content-Security-Policy', $this->buildPolicy());
+
+        return $response;
     }
 
     private function buildPolicy(): string
