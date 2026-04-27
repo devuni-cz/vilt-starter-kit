@@ -6,8 +6,8 @@
 
 **A modern, production-ready starter kit combining the power of Laravel, Inertia.js, Vue 3, and TailwindCSS**
 
-[![Laravel](https://img.shields.io/badge/Laravel-12.x-FF2D20?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
-[![Inertia.js](https://img.shields.io/badge/Inertia.js-2.x-9553E9?style=flat&logo=inertia&logoColor=white)](https://inertiajs.com)
+[![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=flat&logo=laravel&logoColor=white)](https://laravel.com)
+[![Inertia.js](https://img.shields.io/badge/Inertia.js-3.x-9553E9?style=flat&logo=inertia&logoColor=white)](https://inertiajs.com)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=flat&logo=vue.js&logoColor=white)](https://vuejs.org)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-4.x-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
@@ -40,16 +40,16 @@
 | Feature         | Version | Description                                  |
 | --------------- | ------- | -------------------------------------------- |
 | **Vue 3**       | `3.5.x` | Composition API with `<script setup>` syntax |
-| **Inertia.js**  | `2.x`   | SPA experience without API complexity        |
+| **Inertia.js**  | `3.x`   | SPA experience without API complexity        |
 | **TailwindCSS** | `4.x`   | Utility-first CSS framework                  |
-| **Vite**        | `7.x`   | Lightning-fast build tool and dev server     |
+| **Vite**        | `8.x`   | Lightning-fast build tool and dev server     |
 | **SSR Support** | ✅      | Server-side rendering for better SEO         |
 
 ### Backend Stack
 
 | Feature     | Version | Description                               |
 | ----------- | ------- | ----------------------------------------- |
-| **Laravel** | `12.x`  | Modern PHP framework with latest features |
+| **Laravel** | `13.x`  | Modern PHP framework with latest features |
 | **PHP**     | `8.5+`  | Latest PHP with performance improvements  |
 | **Sentry**  | `4.x`   | Error tracking and performance monitoring |
 
