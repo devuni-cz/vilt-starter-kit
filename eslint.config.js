@@ -1,9 +1,33 @@
 import js from '@eslint/js'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
+import * as pluginImportX from 'eslint-plugin-import-x'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 import pluginUnusedImports from 'eslint-plugin-unused-imports'
 import pluginVue from 'eslint-plugin-vue'
 import globals from 'globals'
 import vueParser from 'vue-eslint-parser'
+
+// Resolver picks up the `@/*` alias from jsconfig.json so import-x can verify paths.
+const importXSettings = {
+    'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+            project: './jsconfig.json',
+            extensions: ['.js', '.mjs', '.cjs', '.vue'],
+        }),
+    ],
+}
+
+// Catches casing mismatches between import paths and actual filenames
+// (Windows/macOS = case-insensitive FS, Linux = case-sensitive — would break in production).
+const importXRules = {
+    'import-x/no-unresolved': [
+        'error',
+        {
+            caseSensitive: true,
+            caseSensitiveStrict: true,
+        },
+    ],
+}
 
 export default [
     // Base JavaScript configuration
@@ -21,7 +45,9 @@ export default [
         plugins: {
             'unused-imports': pluginUnusedImports,
             'simple-import-sort': pluginSimpleImportSort,
+            'import-x': pluginImportX,
         },
+        settings: importXSettings,
         rules: {
             'unused-imports/no-unused-imports': 'error',
             'unused-imports/no-unused-vars': [
@@ -35,6 +61,7 @@ export default [
             ],
             'simple-import-sort/imports': 'error',
             'simple-import-sort/exports': 'error',
+            ...importXRules,
         },
     },
 
@@ -57,8 +84,12 @@ export default [
             vue: pluginVue,
             'unused-imports': pluginUnusedImports,
             'simple-import-sort': pluginSimpleImportSort,
+            'import-x': pluginImportX,
         },
+        settings: importXSettings,
         rules: {
+            ...importXRules,
+
             // Vue essential rules
             'vue/no-dupe-keys': 'error',
             'vue/no-duplicate-attributes': 'error',
