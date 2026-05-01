@@ -47,3 +47,7 @@ coverage
 # Rector / PHPStan
 .rector_cache
 .phpstan
+
+# Published vendor views (Laravel mail markdown, pagination, notifications…)
+# Whitespace and line breaks here have semantic meaning — never auto-format.
+resources/views/vendor

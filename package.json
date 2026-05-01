@@ -9,8 +9,8 @@
         "prepare": "husky || true",
         "lint": "eslint resources/js --fix",
         "lint:check": "eslint resources/js",
-        "prettier": "prettier --write \"resources/**/*.{js,vue,css}\" \"**/*.{json,md,yml,yaml}\" --ignore-path .gitignore",
-        "prettier:check": "prettier --check \"resources/**/*.{js,vue,css}\" \"**/*.{json,md,yml,yaml}\" --ignore-path .gitignore",
+        "prettier": "prettier --write \"resources/**/*.{js,vue,css}\" \"**/*.{json,md,yml,yaml}\" --ignore-path .gitignore --ignore-path .prettierignore",
+        "prettier:check": "prettier --check \"resources/**/*.{js,vue,css}\" \"**/*.{json,md,yml,yaml}\" --ignore-path .gitignore --ignore-path .prettierignore",
         "format": "npm run prettier && npm run lint",
         "check": "npm run lint:check && npm run prettier:check"
     },
