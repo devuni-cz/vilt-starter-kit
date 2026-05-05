@@ -1,8 +1,9 @@
 {
     "agents": ["claude_code", "copilot"],
+    "cloud": false,
     "guidelines": true,
     "mcp": true,
-    "nightwatch_mcp": false,
+    "nightwatch": false,
     "packages": ["barryvdh/laravel-debugbar"],
     "sail": false,
     "skills": [
