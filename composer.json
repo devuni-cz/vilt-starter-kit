@@ -24,10 +24,10 @@
         "ext-pdo": "*",
         "ext-session": "*",
         "ext-tokenizer": "*",
-        "inertiajs/inertia-laravel": "3.0.6",
-        "laravel/framework": "^13.7.0",
+        "inertiajs/inertia-laravel": "3.1.0",
+        "laravel/framework": "^13.8.0",
         "laravel/tinker": "^3.0.2",
-        "laravel/wayfinder": "^0.1.16",
+        "laravel/wayfinder": "^0.1.20",
         "sentry/sentry-laravel": "^4.25.1"
     },
     "require-dev": {
@@ -46,7 +46,7 @@
         "pestphp/pest-plugin-type-coverage": "^4.0.4",
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan-strict-rules": "^2.0.11",
-        "rector/rector": "^2.4.2"
+        "rector/rector": "^2.4.3"
     },
     "autoload": {
         "psr-4": {
