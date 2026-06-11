@@ -10,7 +10,6 @@
     <x-inertia::head>
         <title>{{ config('app.name', 'Devuni - vilt-starter-kit') }}</title>
     </x-inertia::head>
-    <x-inertia::head />
 </head>
 
 <body class="font-sans antialiased h-screen overflow-hidden">
