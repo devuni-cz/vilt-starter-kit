@@ -20,7 +20,7 @@
         "@tailwindcss/vite": "^4.3.1",
         "@vitejs/plugin-vue": "^6.0.7",
         "concurrently": "^10.0.3",
-        "eslint": "^10.4.1",
+        "eslint": "^10.5.0",
         "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-import-x": "^4.16.2",
         "eslint-plugin-simple-import-sort": "^13.0.0",
@@ -33,7 +33,7 @@
         "prettier": "^3.8.4",
         "prettier-plugin-organize-attributes": "^1.0.0",
         "prettier-plugin-tailwindcss": "^0.8.0",
-        "tailwindcss": "^4.3.0",
+        "tailwindcss": "^4.3.1",
         "vite": "^8.0.16",
         "vue-eslint-parser": "^10.4.1"
     },
@@ -50,7 +50,7 @@
         "@rollup/rollup-linux-x64-gnu": "4.62.0",
         "@rollup/rollup-win32-x64-msvc": "4.62.0",
         "@tailwindcss/oxide-linux-x64-gnu": "^4.3.1",
-        "@tailwindcss/oxide-win32-x64-msvc": "^4.3.0",
+        "@tailwindcss/oxide-win32-x64-msvc": "^4.3.1",
         "lightningcss-linux-x64-gnu": "^1.32.0",
         "lightningcss-win32-x64-msvc": "^1.32.0"
     },
