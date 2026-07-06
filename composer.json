@@ -24,29 +24,29 @@
         "ext-pdo": "*",
         "ext-session": "*",
         "ext-tokenizer": "*",
-        "inertiajs/inertia-laravel": "3.1.0",
-        "laravel/framework": "^13.16.1",
+        "inertiajs/inertia-laravel": "3.1.1",
+        "laravel/framework": "^13.18.1",
         "laravel/tinker": "^3.0.2",
         "laravel/wayfinder": "^0.1.20",
         "sentry/sentry-laravel": "^4.26.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^4.3.0",
+        "barryvdh/laravel-debugbar": "^4.4.0",
         "driftingly/rector-laravel": "^2.5.0",
         "fakerphp/faker": "^1.24.1",
         "larastan/larastan": "^3.10.0",
-        "laravel/boost": "^2.4.10",
+        "laravel/boost": "^2.4.11",
         "laravel/pail": "^1.2.7",
         "laravel/pint": "^1.29.3",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.9.4",
-        "pestphp/pest": "^4.7.3",
+        "pestphp/pest": "^4.7.4",
         "pestphp/pest-plugin-browser": "^4.3.1",
         "pestphp/pest-plugin-laravel": "^4.1.0",
         "pestphp/pest-plugin-type-coverage": "^4.0.4",
         "phpstan/extension-installer": "^1.4.3",
         "phpstan/phpstan-strict-rules": "^2.0.11",
-        "rector/rector": "^2.4.6"
+        "rector/rector": "^2.5.3"
     },
     "autoload": {
         "psr-4": {
