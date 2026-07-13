@@ -39,7 +39,7 @@
     },
     "dependencies": {
         "@heroicons/vue": "^2.2.0",
-        "@inertiajs/vite": "^3.6.0",
+        "@inertiajs/vite": "^3.6.1",
         "@inertiajs/vue3": "^3.6.0",
         "@sentry/vite-plugin": "^5.3.0",
         "@sentry/vue": "^10.63.0",
