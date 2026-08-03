@@ -24,7 +24,7 @@
         "ext-pdo": "*",
         "ext-session": "*",
         "ext-tokenizer": "*",
-        "inertiajs/inertia-laravel": "3.1.1",
+        "inertiajs/inertia-laravel": "3.2.1",
         "laravel/framework": "^13.21.1",
         "laravel/tinker": "^3.0.2",
         "laravel/wayfinder": "^0.1.20",
