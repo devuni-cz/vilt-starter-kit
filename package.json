@@ -44,7 +44,7 @@
         "@sentry/vite-plugin": "^5.4.0",
         "@sentry/vue": "^10.69.0",
         "@vue/server-renderer": "^3.5.41",
-        "vue": "^3.5.40"
+        "vue": "^3.5.41"
     },
     "optionalDependencies": {
         "@rollup/rollup-linux-x64-gnu": "4.62.3",
