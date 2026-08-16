@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
-use Rector\CodingStyle\Rector\Enum_\EnumCaseToPascalCaseRector;
 use Rector\Config\RectorConfig;
 use Rector\Php83\Rector\ClassMethod\AddOverrideAttributeToOverriddenMethodsRector;
 use RectorLaravel\Rector\FuncCall\AppToResolveRector;
@@ -24,7 +22,6 @@ return RectorConfig::configure()
         __DIR__.'/storage',
         __DIR__.'/vendor',
         AddOverrideAttributeToOverriddenMethodsRector::class,
-        EncapsedStringsToSprintfRector::class,
         AppToResolveRector::class,
     ])
     ->withPreparedSets(
@@ -38,9 +35,6 @@ return RectorConfig::configure()
         rectorPreset: true,
         carbon: true,
     )
-    ->withRules([
-        EnumCaseToPascalCaseRector::class,
-    ])
     ->withSets([
         LaravelSetList::LARAVEL_CODE_QUALITY,
         LaravelSetList::LARAVEL_COLLECTION,
