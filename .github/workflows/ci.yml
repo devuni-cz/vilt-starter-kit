@@ -1,0 +1,48 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+
+permissions:
+    contents: read
+
+jobs:
+    build:
+        name: Build And Test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: '8.5'
+                  coverage: none
+
+            - name: Setup Node
+              uses: actions/setup-node@v7
+              with:
+                  node-version: '24'
+                  cache: 'npm'
+
+            - name: Install composer dependencies
+              run: composer install --no-interaction --no-progress --prefer-dist
+
+            - name: Prepare environment
+              run: |
+                  cp .env.example .env
+                  php artisan key:generate
+                  touch database/database.sqlite
+
+            - name: Install npm dependencies
+              run: npm ci
+
+            # build:ssr runs the client build first, so it covers both.
+            - name: Build client and SSR assets
+              run: npm run build:ssr
+
+            - name: Run tests
+              run: php artisan test
