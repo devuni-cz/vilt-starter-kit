@@ -18,7 +18,7 @@
         "@eslint/js": "^10.0.1",
         "@laravel/vite-plugin-wayfinder": "^0.1.10",
         "@tailwindcss/vite": "^4.3.3",
-        "@vitejs/plugin-vue": "^6.0.8",
+        "@vitejs/plugin-vue": "^6.0.9",
         "concurrently": "^10.0.5",
         "eslint": "^10.10.0",
         "eslint-import-resolver-typescript": "^4.4.5",
