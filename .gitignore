@@ -21,6 +21,8 @@ yarn-error.log*.log
 /public/storage
 /storage/*.key
 /storage/pail
+/storage/framework/lsp-*
+
 /vendor
 Homestead.json
 Homestead.yaml
