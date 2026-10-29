@@ -1,5 +1,5 @@
 {
-    "agents": ["claude_code", "copilot"],
+    "agents": ["claude_code"],
     "cloud": false,
     "guidelines": true,
     "mcp": true,
@@ -7,9 +7,10 @@
     "packages": ["barryvdh/laravel-debugbar"],
     "sail": false,
     "skills": [
+        "infer-conventions",
         "laravel-best-practices",
+        "testing-best-practices",
         "wayfinder-development",
-        "pest-testing",
         "inertia-vue-development",
         "tailwindcss-development",
         "debug-using-debugbar"
