@@ -12,6 +12,13 @@ updates:
       labels:
           - 'dependencies'
           - 'php'
+      # Patch and minor bumps land in one weekly PR, so they no longer fight
+      # over composer.lock. Majors stay separate PRs for manual review.
+      groups:
+          composer-minor-patch:
+              update-types:
+                  - 'minor'
+                  - 'patch'
 
     - package-ecosystem: 'npm'
       directory: '/'
@@ -24,3 +31,9 @@ updates:
       labels:
           - 'dependencies'
           - 'frontend'
+      # Same as composer: one weekly PR for patch and minor, majors separate.
+      groups:
+          npm-minor-patch:
+              update-types:
+                  - 'minor'
+                  - 'patch'
