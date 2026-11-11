@@ -10,6 +10,8 @@ permissions:
 
 jobs:
     build:
+        # The main branch ruleset requires a check with exactly this name and
+        # auto-merge waits for it, so every gate lives in this one job.
         name: Build And Test
         runs-on: ubuntu-latest
         steps:
@@ -43,6 +45,21 @@ jobs:
             # build:ssr runs the client build first, so it covers both.
             - name: Build client and SSR assets
               run: npm run build:ssr
+
+            # Runs after the build: Wayfinder generates @/actions and @/routes
+            # during it and ESLint has to resolve those imports.
+            - name: Lint and formatting (ESLint, Prettier)
+              run: npm run check
+
+            # The next three steps plus the tests mirror `composer check`.
+            - name: Code style (Pint)
+              run: composer pint:test
+
+            - name: Static analysis (PHPStan)
+              run: composer analyse
+
+            - name: Refactoring check (Rector)
+              run: composer rector:check
 
             - name: Run tests
               run: php artisan test
