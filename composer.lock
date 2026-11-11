@@ -9006,16 +9006,16 @@
         },
         {
             "name": "larastan/larastan",
-            "version": "v3.13.2",
+            "version": "v3.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/larastan/larastan.git",
-                "reference": "0de9aec250ab498f97171b43cd1192ce11a8c8fc"
+                "reference": "d8fabc3fd35bec22b4f3f9c1144fc53c6686c43b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/larastan/larastan/zipball/0de9aec250ab498f97171b43cd1192ce11a8c8fc",
-                "reference": "0de9aec250ab498f97171b43cd1192ce11a8c8fc",
+                "url": "https://api.github.com/repos/larastan/larastan/zipball/d8fabc3fd35bec22b4f3f9c1144fc53c6686c43b",
+                "reference": "d8fabc3fd35bec22b4f3f9c1144fc53c6686c43b",
                 "shasum": ""
             },
             "require": {
@@ -9034,7 +9034,7 @@
                 "doctrine/coding-standard": "^14",
                 "laravel/framework": "^11.44.2 || ^12.7.2 || ^13",
                 "mockery/mockery": "^1.6.12",
-                "nikic/php-parser": "^5.4",
+                "nikic/php-parser": "^5.6",
                 "orchestra/canvas": "^v9.2.2 || ^10.0.1 || ^11",
                 "orchestra/testbench-core": "^9.12.0 || ^10.1 || ^11",
                 "phpstan/phpstan-deprecation-rules": "^2.0.1",
@@ -9083,7 +9083,7 @@
             ],
             "support": {
                 "issues": "https://github.com/larastan/larastan/issues",
-                "source": "https://github.com/larastan/larastan/tree/v3.13.2"
+                "source": "https://github.com/larastan/larastan/tree/v3.14.0"
             },
             "funding": [
                 {
@@ -9091,7 +9091,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-23T21:03:09+00:00"
+            "time": "2026-11-03T11:34:05+00:00"
         },
         {
             "name": "laravel/boost",
