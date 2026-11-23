@@ -20,7 +20,7 @@
         "@tailwindcss/vite": "^4.3.5",
         "@vitejs/plugin-vue": "^6.0.11",
         "concurrently": "^10.0.7",
-        "eslint": "^10.14.0",
+        "eslint": "^10.15.0",
         "eslint-import-resolver-typescript": "^4.4.5",
         "eslint-plugin-import-x": "^4.18.1",
         "eslint-plugin-simple-import-sort": "^14.0.0",
@@ -29,7 +29,7 @@
         "globals": "^17.14.0",
         "husky": "^9.1.7",
         "laravel-vite-plugin": "^3.2.1",
-        "lint-staged": "^17.6.0",
+        "lint-staged": "^17.6.1",
         "prettier": "^3.10.1",
         "prettier-plugin-organize-attributes": "^1.0.0",
         "prettier-plugin-tailwindcss": "^0.8.1",
@@ -41,10 +41,10 @@
         "@heroicons/vue": "^2.2.0",
         "@inertiajs/vite": "^3.11.0",
         "@inertiajs/vue3": "^3.11.0",
-        "@sentry/vite-plugin": "^11.12.0",
-        "@sentry/vue": "^11.12.0",
-        "@vue/server-renderer": "^3.5.45",
-        "vue": "^3.5.45"
+        "@sentry/vite-plugin": "^11.16.0",
+        "@sentry/vue": "^11.16.0",
+        "@vue/server-renderer": "^3.5.46",
+        "vue": "^3.5.46"
     },
     "optionalDependencies": {
         "@tailwindcss/oxide-linux-x64-gnu": "^4.3.5",
